@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+     
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+    
+<body class="map clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--alert-->
+    <div class="alert_container">
+        <span>호그와트 급행 열차 시간 안내</span>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="alert_content">
+            <div class="alert_line">
+                <div class="alert_line_circle"></div>
+                <div class="alert_line_circle"></div>
+                <div class="alert_line_middle"></div>
+            </div>
+            <div class="alert_content_text">
+                <div class="text_top">
+                    <h3>출발지</h3>
+                    <p>킹스크로스 역 9와 3/4 승강장</p>
+                    <table>
+                        <tr class="table_category">
+                            <td colspan="3" class="table_line">평일</td>
+                            <td colspan="3">주말/공휴일</td>
+                        </tr>
+                        <tr class="table_list none_bottom">
+                            <td>08:00</td>
+                            <td>10:00</td>
+                            <td class="table_line">12:00</td>
+                            <td>08:00</td>
+                            <td>10:00</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr class="table_list" style="height: 50px !important; line-height: 25px !important;">
+                            <td>14:00</td>
+                            <td>16:00</td>
+                            <td class="table_line">18:00</td>
+                            <td>14:00</td>
+                            <td>16:00</td>
+                            <td>18:00</td>
+                        </tr>
+                    </table>
+                    <p style="line-height: 25px;">※ 열차는 학생들의 편의를 위하여 무료로 운영하고 있습니다. 따라서 기상 악화 등의 천재지변으로 운행이
+                    불가할 경우 발생하는 피해에 대해 호그와트는 어떤 책임도 지지 않습니다.</p>
+                </div>
+                <div class="text_top">
+                    <h3>도착지</h3>
+                    <p>호그스미드</p>
+                    <table>
+                        <tr class="table_category">
+                            <td colspan="3" class="table_line">평일</td>
+                            <td colspan="3">주말/공휴일</td>
+                        </tr>
+                        <tr class="table_list none_bottom">
+                            <td>08:00</td>
+                            <td>10:00</td>
+                            <td class="table_line">12:00</td>
+                            <td>08:00</td>
+                            <td>10:00</td>
+                            <td>12:00</td>
+                        </tr>
+                        <tr class="table_list" style="height: 50px !important; line-height: 25px !important;">
+                            <td>14:00</td>
+                            <td>16:00</td>
+                            <td class="table_line">18:00</td>
+                            <td>14:00</td>
+                            <td>16:00</td>
+                            <td>18:00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert_bg"></div>
+
+
+    <!--page1-->
+    <div class="page1 clearfix col-d-12">
+        <section class="sec1 clearfix">
+            <div class="col-d-6 title">
+                <p>DIRECTIONS</p>
+                <span>LOCATION</span>
+            </div>
+            <div class="cont_wrap">
+                <span>DIRECTIONS</span>
+                <span>HOGWARTS EXPRESS</span>
+            </div>
+        </section>
+    </div>
+
+
+    <!--page2-->
+    <div class="page2 clearfix col-d-12">
+        <div class="contents_left col-d-6">
+            <h1>DIRECTIONS</h1>
+            <span class="left_text">
+                <p>기차로 오실 때</p>
+                1) 킹스크로스 역에서 9와 3/4 승강장을 찾아주세요. 승강장을 찾는 요령은 9번, 10번 승강장 사이의 벽으로 뛰어드는 것입니다. 보통 벽처럼 보여도 놀라지 마세요!
+                마법 능력이 있는 사람이라면 누구든 벽에 부딪히지 않고 들어올 수 있습니다.<br/>
+                <br/>
+                2) 9와 3/4 승강장에서는 호그와트로 향하는 급행 열차를 운영하고 있습니다. 미리 시간표를 확인하여 늦는 일이 없도록 해주세요.<br/>
+                <br/>
+                3) 기차는 10시간 동안 운행하며, 호그스미드 역에 정차합니다. 신입생의 경우 호그와트 숲지기인 ‘루베우스 해그리드’의 안내를 받아 보트를 타고 호그와트로 이동합니다.
+                (2학년 이상의 경우는 세스트랄이 이끄는 마차를 타고 이동합니다.)<br/>
+                <br/><br/><br/>
+                <p>자동차로 오실 때</p>
+                하늘을 나는 자동차는 머글의 눈에 띄기 쉬워 엄격히 금지하고 있으나, 탑승 전 호그와트의 허가를 받는다면 이용이 가능합니다.
+                이 경우 학교 측에서 미리 호그와트의 위치를 기록한 편지를 보낼 테니, 위치 마법을 이용하여 편히 날아오세요!<br/>
+                <br/><br/><br/>
+                <p>플루가루로 오실 때</p>
+                제한적인 상황에서, 플루 가루를 이용하여 호그와트 벽난로 중 하나로 워프가 가능합니다. 다만 보안 및 안전의 문제가 있어 호그와트 재학생으로 사용을 한정하고 있습니다.
+                (같은 이유로 신입생은 사용이 불가합니다.)
+            </span>
+        </div>
+        <div class="contents_right col-d-6">
+            <div class="map_wrap">
+                <div onclick="img_calc('plus')" class="map_btn" id="btn_plus"><i class="las la-plus"></i></div>
+                <div onclick="img_calc('minus')" class="map_btn" id="btn_minus"><i class="las la-minus"></i></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    var scrolltop = window.scrollY;
+    var windowheight = $(window).height();
+
+    $(document).ready(function(){
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+            setTimeout(function (){
+                $(".map .title p").css("animation","up 0.7s forwards");
+                $(".map .title span").css("animation","up 0.7s 0.3s forwards");
+                $(".map .cont_wrap span:nth-child(1)").css("animation","up 0.7s 0.6s forwards");
+                $(".map .cont_wrap span:nth-child(2)").css("animation","up 0.7s 0.9s forwards");
+            }, 1200);
+        });
+
+
+
+        /*moving background img*/
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".sec1").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $(".sec1").css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+
+
+
+        $(window).scroll(function(){
+            scrolltop = window.scrollY;
+            scrolloffset = $(".map .page2").offset().top;
+            if(scrolltop >= windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+                $("#header img:nth-child(1)").css("display","none");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+                $(".header_menu div").css("background-color","#333");
+
+            }else if(scrolltop < windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_w.png");
+                $("#header img:nth-child(1)").css("display","block");
+                $(".header_menu div").css("background-color","#fff");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_w.png");
+            }
+        });
+
+
+
+        var circle_top = $(".map .text_top:last-child").offset().top;
+        console.log(circle_top);
+        $(".alert_line_circle:nth-child(2)").css("top",circle_top);
+    });
+
+
+    /*scroll(for click)*/
+    $(".map .cont_wrap span:first-child").click(function(){
+        var scroll_position = $(".sec1").outerHeight();
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".map .cont_wrap span:nth-child(2)").click(function(){
+        access_granted();
+    });
+
+
+
+    /*map btn click*/
+    function img_calc(pm){
+        var current_size = $(".map .contents_right").css("background-size");
+        var result_size = current_size.replace("%","");
+        var calc_size;
+
+        switch(pm){
+            case "plus":
+                calc_size = Number(result_size) + 20;
+                if(calc_size <= 300 && calc_size >= 100){
+                    $(".map .contents_right").css("background-size", calc_size + "%");
+                }
+            break;
+            case "minus":
+                calc_size = Number(result_size) - 20;
+                if(calc_size <= 300 && calc_size >= 100){
+                    $(".map .contents_right").css("background-size", calc_size + "%");
+                }
+            break;
+        }
+
+        console.log(result_size);
+        if(result_size == 300){
+            $(".map #btn_plus i").css("color","#aaa");
+        }else if(result_size == 100){
+            $(".map #btn_minus i").css("color","#aaa");
+        }else{
+            $(".map .map_btn i").css("color","#333");
+        }
+    }
+
+
+
+    /*access*/
+    function access_granted() { //granted
+        $(".map .alert_bg").css("display", "block");
+        $(".map .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+    }
+
+
+
+    /*image drag*/
+    const image = document.querySelector(".map .contents_right");
+    let xPos = 0;
+    let yPos = 30;
+    let xMoved = 0;
+    let yMoved = 0;
+    let mouseDown;
+    const accel = 2.5;
+
+    image.addEventListener("mousedown", function (event) {
+        mouseDown = setInterval(() => {
+            xPos = Math.max(0, Math.min(xPos - xMoved, 100));
+            yPos = Math.max(0, Math.min(yPos - yMoved, 100));
+            image.style.backgroundPosition = `${xPos}% ${yPos}%`;
+            [xMoved, yMoved] = [0, 0];
+        }, 100);
+    });
+
+    document.addEventListener("mousemove", function (event) {
+        xMoved = event.movementX * accel;
+        yMoved = event.movementY * accel;
+    });
+
+    document.addEventListener("mouseup", function (event) {
+        if (mouseDown) clearInterval(mouseDown);
+    });
+</script>
+</html>

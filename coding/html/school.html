@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+     
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+    
+<body class="school clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--alert-->
+    <div class="alert_container col-d-4">
+        <span>회원가입 불가</span>
+        <i class="las la-home"></i>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="alert_content">
+            <img src="../img/alert_x.png" alt="join refuse image"/>
+            <p>빈 항목이 없도록 내용을 입력해주세요</p>
+        </div>
+    </div>
+    <div class="alert_bg"></div>
+
+
+    <!--page1-->
+    <div class="page1 clearfix col-d-12">
+        <section class="sec1 clearfix">
+            <div class="col-d-6 title">
+                <p>WELCOME TO</p>
+                <span>HOGWARTS SCHOOL</span>
+            </div>
+            <div class="cont_wrap">
+                <span>SCHOOL SONG</span>
+                <span>HOGWARTS NEWS</span>
+                <span>ADMIN CENTER</span>
+            </div>
+        </section>
+    </div>
+        
+        
+    <!--page2-->
+    <div class="page2 clearfix col-d-12">
+        <div class="clearfix contents_left col-d-3">
+            <section class="sec2 col-d-12">
+                <span>SCHOOL<br/>SONG</span>
+                <p>호그와트의 교가는 정해진 음이 없습니다<br/>원하는 가락을 붙여 멋지게 불러보세요</p>
+                <div class="arr_container">
+                    <img class="arr_btns" src="../img/icon_arr_l.svg" alt="prev button" id="prev_arr" data-lang="kor"/>
+                    <img class="arr_btns" src="../img/icon_arr_r.svg" alt="next button" id="next_arr" data-lang="eng"/>
+                </div>
+            </section>
+        </div>
+
+        <section class="contents_right clearfix col-d-9">
+            <section class="sec3 col-d-3"></section>
+            <span class="kor">
+                호그와트, 호그와트, 호기 와티, 호그와트,<br/>
+                제발 좀 가르쳐 주세요.<br/>
+                노인이건 대머리이건<br/>
+                무릎에 때가 낀 어린애들이건,<br/>
+                머리에 채울 것이 필요해요.<br/>
+                아주 재미있는 걸로 말이에요.<br/>
+                우리 머리는 지금 텅 비어 있어요.<br/>
+                파리 시체와 솜털만 조금 있을 뿐이죠.<br/>
+                그러니 배울 만한 것들을 가르쳐 주세요.<br/>
+                우리가 잊었던 것을 알려주세요.<br/>
+                그저 최선을 다해 주세요, 나머진 우리가 할게요.<br/>
+                그리고 머리가 썩어버릴 때까지<br/>
+                계속 배우고 또 배울게요.
+            </span>
+            <div class="option_wrap col-d-9">
+                <p class="kor op_active">KOR</p>
+                <p class="eng">ENG</p>
+                <a>기숙사 반장들의 시범 보기<img src="../img/btn_arr_g.svg" alt="show presentation"/></a>
+            </div>
+            <div class="pt_bg">
+                <div class="video_wrap"><img src="../img/plus_w.png" alt="video close button"/></div>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Pu7llLDoAfk?autoplay=0&
+                controls=0&fs=0&loop=0&modestbranding=0&rel=0&showinfo=0&vq=hd720&theme=dark"
+                        frameborder="0" style="position: absolute; width:100%; height:80%; bottom: 0%;" id="pt_video">
+                </iframe>
+            </div>
+            <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="cont_logo"/>
+        </section>
+    </div>
+
+
+    <!--page3-->
+    <div class="page3 clearfix col-d-12">
+        <div class="pg3_right col-d-9">
+            <span style="margin: 0;">HOGWARTS<br/>NEWS</span>
+        </div>
+        <section class="news_list col-d-9">
+            <hr/>
+            <div class="news">
+                <span>123</span>
+                <div class="new">new</div><span>호그와트 유령 '모우닝 머틀'의 억울함을 파헤치다</span>
+                <span>2019.09.27</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>132</span>
+                <span>신임 마법부 장관 '올리버 우드', 호그와트 그리핀도르 기숙사 출신</span>
+                <span>2019.09.27</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>131</span>
+                <span>호그와트, 형편이 어려운 학생들을 위한 자선 행사 개최</span>
+                <span>2019.09.15</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>130</span>
+                <span>전 호그와트 교장 '알버스 덤블도어'의 추도식에 천 여명의 인파 몰려</span>
+                <span>2019.09.08</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>129</span>
+                <span>1000회를 맞은 호그와트 동창회 밀착 취재</span>
+                <span>2019.08.31</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>128</span>
+                <span>머글 연구학에 기여한 공로로 표창장 받은 '아서 위즐리', 상금 전부 호그와트에 쾌척</span>
+                <span>2019.08.30</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>127</span>
+                <span>호그와트 신임 교장, 집요정들의 파업 지지 ... "용감한 결정"</span>
+                <span>2019.08.22</span>
+            </div>
+            <hr/>
+            <div class="pagination">
+                <img src="../img/btn_arr_g_l.svg" alt="pagination previous button"/>
+                <span class="pag_active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <img src="../img/btn_arr_g_r.svg" alt="pagination next button"/>
+            </div>
+        </section>
+    </div>
+
+
+    <!--fullbanner-->
+    <section class="fullbanner col-d-12">
+        <div class="banner_title">
+            <p>SLOGAN</p>
+            <span>DRACO DORMIENS<br/>NUNQUAM TITILLANDUS</span>
+        </div>
+    </section>
+
+
+    <!--page4-->
+    <div class="page4 clearfix col-d-12">
+        <div class="pg3_right col-d-9">
+            <span style="margin: 0;">ADMIN<br/>CENTER</span>
+        </div>
+        <div class="pg4_bg col-d-2">
+            <div class="page_wrap">
+                <a>수강신청으로 이동<img src="../img/btn_arr_g.svg" alt="go to study page"/></a>
+                <div class="gif_wrap">
+                    <div class="shape_rectangle"></div>
+                </div>
+            </div>
+            <div class="menu_spanwrap clearfix">
+                <span class="col-d-12 darkcolor">자주 묻는 질문</span>
+                <span class="col-d-12" id="request">문의하기</span>
+            </div>
+        </div>
+        <!--faq-->
+        <div class="accordion col-d-9">
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;한 번 정해진 기숙사는 변경할 수 없나요?</a>
+                <div class="content">
+                    <p>기숙사는 개인 또는 본교의 의견이 아니라 '마법 분류모자'의 결정을 따릅니다.
+                        이 모자는 4명의 호그와트 설립자들이 자신의 두뇌를 조금씩 부여한 마법 도구로, 모자가 한 번 결정한 사항은 결코 바꾸실 수 없습니다.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;입학통지서를 받지 못했어요</a>
+                <div class="content">
+                    <p>입학 자격이 분명함에도 모종의 이유로 입학통지서를 받지 못한 경우,
+                        호그와트 측 사냥터지기가 직접 학생을 데리러 갈 테니 걱정하지 마시고 입학식 당일까지 기다려 주세요.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;학비 관련 정책은 어디에서 확인할 수 있나요?</a>
+                <div class="content">
+                    <p>호그와트는 마법부의 지원금으로 운영되는 공립학교이며, 따라서 학비를 따로 내실 필요는 없습니다.
+                        하지만 교복과 교보재, 교과서 등은 각자 구입하셔야 합니다.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;킹스 크로스 역에서 9와 3/4 승강장을 어떻게 찾나요?</a>
+                <div class="content">
+                    <p>역의 9번과 10번 홈을 찾으세요. 그 사이의 벽에는 마법사만 통과할 수 있는 마법이 걸려 있습니다.
+                        평범한 벽처럼 보이더라도 두려워하지 말고 벽으로 직진하세요. 곧장 9와 3/4 승강장을 찾을 수 있으실 겁니다.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;트리위저드 시합이 무엇인가요?</a>
+                <div class="content">
+                    <p>트리위저드는 호그와트, 보바통, 덤스트랭이 5년마다 한 번씩 모여 각 학교 대표 마법사들의 실력을 겨루는 시합입니다.
+                        700년 전 마법사간 친선과 교류를 위해 최초로 실시되었으며 마법부의 주관 하에 호그와트에서 개최하여 치뤄집니다.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;기숙사 점수의 득점 기준과 현황을 알고 싶습니다</a>
+                <div class="content">
+                    <p>기숙사 점수는 호그와트 홀 입구의 모래시계 또는 홈페이지의 메인 화면을 통해 간단히 확인하실 수 있습니다.</p>
+                </div>
+            </div>
+            <div class="accordion_item">
+                <a>Q &nbsp;&nbsp;&nbsp;&nbsp;호그와트가 배출한 위대한 마법사로는 누가 있나요?</a>
+                <div class="content">
+                    <p>호그와트의 영원한 삼총사인 해리포터와 론 위즐리, 헤르미온느 그레인저 외 위즐리 형제들,
+                        위대한 마법사인 덤블도어, 맥고나걸, 그리고 스네이프 등이 있습니다.</p>
+                </div>
+            </div>
+            <div class="pagination">
+                <img src="../img/btn_arr_g_l.svg" alt="pagination previous button"/>
+                <span class="pag_active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <img src="../img/btn_arr_g_r.svg" alt="pagination next button"/>
+            </div>
+        </div>
+        <!--ask-->
+        <form class="ask col-d-9 clearfix" id="">
+            <div class="ask_left col-d-6">
+                <!--subject-->
+                <div class="log_input first">
+                    <span>제목</span>
+                    <input type="text" name="subject" placeholder="제목을 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+                <!--ask type-->
+                <div class="log_input">
+                    <span>문의 유형</span>
+                    <select name="asktype" id="asktype">
+                        <option value="">문의 유형을 선택해주세요</option>
+                        <option value="Admission">입학</option>
+                        <option value="timeoff">휴학</option>
+                        <option value="graduation">졸업 및 진로</option>
+                        <option value="etc">기타 문의</option>
+                    </select>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+                <!--file-->
+                <div class="log_input">
+                    <span>파일 첨부</span>
+                    <label for="attach">파일을 선택해주세요<i class="las la-paperclip"></i></label>
+                    <input type="file" id="attach">
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                    <span style="margin: 20px 0px 0px 0px;">※ 파일은 .jpg, .gif 등의 이미지 또는 압축 파일만 업로드 가능합니다.</span>
+                </div>
+            </div>
+            <div class="ask_right col-d-6">
+                <!--context-->
+                <div class="log_input clearfix">
+                    <span>내용</span>
+                    <textarea class="col-d-12" placeholder="내용을 입력해주세요"></textarea>
+                </div>
+                <div class="log_btn">
+                    <span><i class="las la-unlock"></i>콜로포터스</span>
+                    <button type="button">작성 완료</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    $(document).ready(function(){
+        var asksubject;
+        var asktype;
+        var askfile;
+        var askcontent;
+
+        var scrolltop = window.scrollY;
+        var windowheight = $(window).height();
+        var span_height = $(".pg3_right span").height();
+        var ask_left_height = $(".school .ask").height();
+        var calc_height = span_height + parseInt(100);
+        var result_height = calc_height + "px";
+        $(".pg3_right").css("height", result_height);
+        $(".school .ask_right .log_input textarea").css("height", ask_left_height - 34 + "px");
+
+
+
+        /*parameter using*/
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var submenu = getParameterByName("submenu");
+        switch(submenu){
+            case "언론보도":
+                var scroll_position = $(".sec1").outerHeight() * 2;
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+            case "행정센터":
+                var scroll_position = $(".sec1").outerHeight() * 3 + 390 + "px";
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+        }
+
+
+
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+            setTimeout(function (){
+                $(".school .title p").css("animation","up 0.7s forwards");
+                $(".school .title span").css("animation","up 0.7s 0.3s forwards");
+                $(".school .cont_wrap span:nth-child(1)").css("animation","up 0.7s 0.6s forwards");
+                $(".school .cont_wrap span:nth-child(2)").css("animation","up 0.7s 0.9s forwards");
+                $(".school .cont_wrap span:nth-child(3)").css("animation","up 0.7s 1.2s forwards");
+            }, 1200);
+        });
+
+
+
+        /*moving background img*/
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".sec1").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $(".sec1").css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+
+
+
+        $(window).scroll(function(){
+            scrolltop = window.scrollY;
+            if(scrolltop >= windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+                $("#header img:nth-child(1)").css("display","none");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+                $(".header_menu div").css("background-color","#333");
+            }else if(scrolltop < windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_w.png");
+                $("#header img:nth-child(1)").css("display","block");
+                $(".header_menu div").css("background-color","#fff");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_w.png");
+            }
+        });
+
+
+
+        /*language select*/
+        $(".option_wrap p").click(function(){
+            var spanCls = $(".school .contents_right span").attr("class");
+            var thisCls = $(this).attr("class");
+            var resultCls = thisCls.substr(0,3);
+            console.log(spanCls+"/"+resultCls);
+            if(spanCls != resultCls){
+                lang_select(resultCls);
+            }
+        });
+
+        $(".arr_container img").click(function(){
+            var arrId = $(this).attr("id");
+            var dataId;
+            if(arrId == "next_arr"){
+                dataId = $(".school #next_arr").attr("data-lang");
+                lang_select(dataId);
+            }else{
+                dataId = $(".school #prev_arr").attr("data-lang");
+                lang_select(dataId);
+            }
+        });
+
+        function lang_select(r){
+            switch(r){ // to korean
+                case "kor":
+                    $(".school .contents_right span").css("animation","down 0.4s forwards");
+                    setTimeout(function(){
+                        $(".school .contents_right span").html("호그와트, 호그와트, 호기 와티, 호그와트,<br/>" +
+                            "제발 좀 가르쳐 주세요.<br/>" +
+                            "노인이건 대머리이건<br/>" +
+                            "무릎에 때가 낀 어린애들이건,<br/>" +
+                            "머리에 채울 것이 필요해요.<br/>" +
+                            "아주 재미있는 걸로 말이에요.<br/>" +
+                            "우리 머리는 지금 텅 비어 있어요.<br/>" +
+                            "파리 시체와 솜털만 조금 있을 뿐이죠.<br/>" +
+                            "그러니 배울 만한 것들을 가르쳐 주세요.<br/>" +
+                            "우리가 잊었던 것을 알려주세요.<br/>" +
+                            "그저 최선을 다해 주세요, 나머진 우리가 할게요.<br/>" +
+                            "그리고 머리가 썩어버릴 때까지<br/>" +
+                            "계속 배우고 또 배울게요.");
+                        $(".school .contents_right span").css("animation","up 0.6s forwards");
+                        $(".contents_right span").attr("class","kor");
+                        $(".school #prev_arr").attr("data-lang","kor");
+                        $(".option_wrap p:nth-child(2)").removeClass("op_active");
+                        $(".option_wrap p:nth-child(1)").addClass("op_active");
+                        $(".school #next_arr").css("visibility","visible");
+                        $(".school #prev_arr").css("visibility","hidden");
+                    },300);
+                break;
+                case "eng": // to english
+                    $(".school .contents_right span").css("animation", "down 0.4s forwards");
+                    setTimeout(function () {
+                        $(".school .contents_right span").html("Hogwarts, Hogwarts, Hoggy Warty Hogwarts,<br/>" +
+                            "Teach us something please,<br/>" +
+                            "Whether we be old and bald<br/>" +
+                            "Or young with scabby knees,<br/>" +
+                            "Our heads could do with filling<br/>" +
+                            "With some interesting stuff,<br/>" +
+                            "For now they're bare and full of air,<br/>" +
+                            "Dead flies and bits of fluff,<br/>" +
+                            "So teach us things worth knowing,<br/>" +
+                            "Bring back what we've forgot,<br/>" +
+                            "Just do your best, we'll do the rest,<br/>" +
+                            "And learn until our brains all rot.");
+                        $(".school .contents_right span").css("animation", "up 0.6s forwards");
+                        $(".contents_right span").attr("class", "eng");
+                        $(".school #next_arr").attr("data-lang","eng");
+                        $(".option_wrap p:nth-child(1)").removeClass("op_active");
+                        $(".option_wrap p:nth-child(2)").addClass("op_active");
+                        $(".school #prev_arr").css("visibility","visible");
+                        $(".school #next_arr").css("visibility","hidden");
+                    }, 300);
+                break;
+            }
+        }
+    });
+
+
+    /*presentation*/
+    $(".school .option_wrap a, .school .pg4_bg a").hover(function(){ //hover
+        $(".school .option_wrap a, .school .pg4_bg a").css("color","#333");
+        $(".school .option_wrap a img, .school .pg4_bg a img").attr("src","../img/btn_arr_b.svg");
+        $(".school .gif_wrap").css("animation","up 0.6s forwards");
+    }, function(){
+        $(".school .option_wrap a, .school .pg4_bg a").css("color","#777");
+        $(".school .option_wrap a img, .school .pg4_bg a img").attr("src","../img/btn_arr_g.svg");
+        $(".school .gif_wrap").css({opacity: "0", transform: "translateY(20%)"});
+        $(".school .gif_wrap").css("animation","");
+    });
+
+    $(".school .option_wrap a").click(function(){
+        $("#mybgm")[0].pause();
+        $(".pt_bg").css("display","block");
+    });
+
+    $(".video_wrap").click(function () {
+        var video = $("#pt_video").attr("src");
+
+        $(".pt_bg").css("display","none");
+        $("#mybgm")[0].play();
+
+        $("#pt_video").attr("src","");
+        $("#pt_video").attr("src","https://www.youtube.com/embed/Pu7llLDoAfk?autoplay=0&controls=0&fs=0&loop=0&modestbranding=0&rel=0&showinfo=0&vq=hd720&theme=dark");
+    });
+
+
+
+    /*scroll(for click)*/
+    $(".school .cont_wrap span:first-child").click(function(){
+        var scroll_position = $(".sec1").outerHeight();
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".school .cont_wrap span:nth-child(2)").click(function(){
+        var scroll_position = $(".sec1").outerHeight() * 2;
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".school .cont_wrap span:nth-child(3)").click(function(){
+        var scroll_position = $(".sec1").outerHeight() * 3 + 390 + "px";
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+
+
+    /*list hover*/
+    $(".school .news span").hover(function(){ // news
+        $(this).siblings("span").css({color: "#333"});
+        $(this).css({color: "#333", fontWeight: "600"});
+    }, function(){
+        $(this).siblings("span").css({color: "#777"});
+        $(this).css({color: "#777", fontWeight: ""});
+    });
+
+
+
+    /*faq click*/
+    var faq_items = document.querySelectorAll(".accordion a");
+    var ori_accor_height = $(".accordion").height();
+    var this_height;
+    var calc_height;
+
+    function toggleAccordion() {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("active");
+        this_height = $(this).parents("div.accordion").height();
+
+        if($(this).hasClass("active")){
+            if(ori_accor_height < this_height){
+                calc_height = this_height - ori_accor_height + 50;
+                $("#request").attr("data-request",calc_height);
+                $(".school .pg4_bg").css("height","calc(100vh + " + calc_height + "px");
+            }
+        }else{
+            calc_height = this_height - ori_accor_height - 50;
+            $("#request").attr("data-request",calc_height);
+            $(".school .pg4_bg").css("height","calc(100vh + " + calc_height + "px");
+        }
+    }
+    faq_items.forEach(function(item){
+        item.addEventListener("click", toggleAccordion);
+    });
+
+
+    /*faq menu*/
+    $(".school .pg4_bg span").click(function(){
+        if(!$(this).hasClass("darkcolor")){ // default > active (css)
+            $(".school .pg4_bg span").removeClass("darkcolor");
+            $(this).addClass("darkcolor");
+        }
+
+        if($(this).text() == "자주 묻는 질문") {
+            var final_height = $("#request").attr("data-request");
+            console.log(final_height);
+            $(".school .pg4_bg").css("height","calc(100vh + " + final_height + "px");
+            $(".school .page4 .ask").css("display","none");
+            $(".school .page4 .accordion").css("display","block");
+        }else{
+            $(".school .pg4_bg").css("height","100vh");
+            $(".school .page4 .accordion").css("display","none");
+            $(".school .page4 .ask").css("display","block");
+        }
+    });
+
+
+
+    /*file check & rename*/
+    $("#attach").change(function(e){
+        var filename = $("input[type=file]")[0].files[0].name;
+        // console.log(filename);
+        $(".school .ask label").html(filename+"<i class=\"las la-paperclip\"></i>");
+    });
+
+
+
+    /*lock active*/
+    $(".log_btn span").click(function(){
+        if($(".log_btn span i").hasClass("las la-lock")){
+            $(".log_btn span i").attr("class","las la-unlock");
+            $(".log_btn span").css("color","#777");
+        }else{
+            $(".log_btn span i").attr("class","las la-lock");
+            console.log(ses_dorm);
+            switch (ses_dorm) {
+                case "sly":
+                    $(".log_btn span").css("color","#19472A");
+                    break;
+                case "grf":
+                    $(".log_btn span").css("color","#950002");
+                    break;
+                case "rav":
+                    $(".log_btn span").css("color","#084DA6");
+                    break;
+                case "huf":
+                    $(".log_btn span").css("color","#DA9543");
+                    break;
+            }
+        }
+    });
+
+
+
+    /*ask submit*/
+    $(".school .ask .log_btn button").click(function () {
+        asksubject = $(".ask .log_input input[name=subject]").val();
+        asktype = $(".ask #asktype option:selected").val();
+        askfile = $("input[type=file]")[0].files[0];
+        askcontent = $(".ask .ask_right .log_input textarea").val();
+        // console.log(asksubject+" / "+asktype+" / "+askfile+" / "+askcontent);
+
+        if (asksubject != "" && asksubject != "" && askcontent != "") {
+            access_granted();
+        }else{
+            access_denied();
+        }
+    });
+
+
+    /*access*/
+    function access_granted() { //granted
+        $(".school .alert_container span").text("문의하기 완료");
+        $(".school .alert_container p").text("문의가 접수되었습니다");
+
+        $(".school .alert_content img").attr("src", "../img/alert_accept.png");
+        $(".school .alert_bg").css("display", "block");
+        $(".school .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+
+
+        $(".ask .log_input input, .ask .log_input textarea").val("");
+        $(".ask .log_input select").find("option:first").attr("selected", "selected");
+    }
+
+    function access_denied() { //denied
+        $(".school .alert_content img").attr("src", "../img/alert_x.png");
+        $(".school .alert_container span").text("접수 불가");
+        $(".school .alert_container p").text("빈 항목이 없도록 내용을 입력해주세요");
+        $(".school .alert_bg").css("display", "block");
+        $(".school .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+    }
+
+    $(".alert_container img").click(function () { //alert close
+        $(".alert_bg").css("display", "none");
+        $(".alert_container").css("display", "none");
+        $("body").css("overflow-y", "");
+    });
+
+
+
+    /*go to board*/
+    $(".school .news_list .news").click(function(){
+        document.location.href="./board.html";
+    });
+
+
+
+    /*go to study*/
+    $(".school .page_wrap a").click(function(){
+        document.location.href="./study.html";
+    });
+</script>
+</html>

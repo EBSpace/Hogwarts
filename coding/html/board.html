@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+
+<body class="board clearfix">
+
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가∙전통</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li>오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <div class="alert_bg"></div>
+
+    <!--content-->
+    <div class="contents clearfix col-d-12">
+        <section class="bd_title col-d-12">
+            <h2>호그와트 유령 ‘모우닝 머틀’의 억울함을 파헤치다</h2>
+            <p>2019.09.27</p>
+        </section>
+        <section class="bd_left col-d-8">
+            <p>
+                호그와트의 유령 ‘모우닝 머틀’을 아는가? 그녀는 안경을 낀 여드름쟁이 여학생으로, 50년 전 바실리스크가 깨어났을 때 희생되었다고 알려져 있다. 화장실에서 울던 중 어떤 남자의 목소리를 들었는데,
+                ‘남자 화장실에나 가라’고 화를 내며 문을 열다가 재수 없게 바실리스크와 마주쳐 버렸다고. 바실리스크의 눈을 보는 즉시 죽게 된다는 사실을 생각하면 그녀는 유령이 될 만했다.
+                하지만 필자는 그녀의 시시한 죽음에 어떤 의문이 남아 있다는 생각을 지울 수 없다. 이에 누구의 억울함도 쉽게 지나치지 않는 ‘예언자 일보’를 통해 그날의 진실을 파헤쳐 보기로 했다.<br/>
+                <br/>
+                얼마 전 ‘죽음을 먹는 자들’에 의해 바실리스크가 깨어나 호그와트 학생들을 공포에 빠뜨린 사건이 있었다. 이때 그것과 마주친 피해자 중 ‘크리비’라는 학생은 카메라 렌즈를 통해
+                그것의 눈을 보았고, 온몸이 돌처럼 굳어버리게 되었다. 물론 현재는 폼프리 부인의 치료로 깨끗이 나았다. 그러나 우리는 여기에서 중대한 사실 하나를 알게 된다. 모우닝 머틀은 안경을 썼다는 것을.
+                안경 렌즈가 바실리스크의 즉사 마법으로부터 주인을 보호해주지 못한다면, 어째서 크리비는 죽음이 아니라 석화된 데 그칠 수 있었겠는가? 이는 사건을 조사한 호그와트 내부 조사단에서도 제기된 바 있으며,
+                아직까지 미스터리로 남아 있다.<br/>
+                <br/>
+                잠시 현재의 이야기를 하겠다. 모우닝 머틀은 여전히 호그와트의 여자 화장실에 살고 있다. 그녀가 있는 화장실은 항상 물이 넘치거나 울부짖는 소리가 들리기 때문에 거의 모두가 사용을 기피하고 있는 상태다.
+                인적이 드물어 종종 불량 학생들의 비행 장소로도 꼽힌다. 또 모우닝 머틀은 생전에 자신의 안경에 콤플렉스를 가지고 있었으며 ‘올리브 혼비’라는 다른 학생으로부터 질 나쁜 괴롭힘을 당했다고 한다.
+                그리하여 유령이 된 후에도 그를 따라다니며 생전의 복수를 하려고도 했다. 물론 법에 저촉되어 저지당하긴 했지만, 우리는 그녀가 그만큼 억울하고 슬프고 화가 난 상태라는 것을 짐작할 수 있다.<br/>
+                죽음 500주년을 축하하며 파티를 여는 다른 호그와트 유령과 달리, 모우닝 머틀은 자신의 죽음에 예민하게 반응하는 편이다. ‘그 사실에 대해 머틀처럼 요란을 떠는 유령은 없었다’는 평이 교내를 떠돌 정도다.
+                한창 감수성이 예민할 꽃다운 나이에 죽었으니 그럴 만도 하잖은가? … 이 이야기를 들은 나는 위의 미스터리에 대해 알아봐야겠다는 생각을 멈출 수 없게 되었다.<br/>
+                <br/>
+                그렇다면 모우닝 머틀의 죽음에 얽힌 진실은 무엇인가? 답은 간단하다. 바실리스크를 조종하여 머틀을 죽였거나, 아니면 먼저 손을 쓴 뒤 바실리스크에 의해 죽었다고 믿게 만드는 것이다.
+                둘 모두 마법이나 마법 약을 쓰면 아주 쉽게 행할 수 있는 일이다. 물론 불법이지만. 그따위 것을 누가 신경 쓰겠는가?<br/>
+                필자는 어쩌면 허무맹랑할지도 모르는 이 가설이 타당한지 실험해보기 위해 희귀 동물 조련사 ‘루베우스 해그리드’를 찾아가 인터뷰했다. 그는 한때 호그와트의 교사였으며, 얼마 전 예언자 일보와의
+                인터뷰를 통해 ‘행복한 삶을 살고 있다’고 밝힌 바 있다. 아래는 인터뷰 전문이다.
+            </p>
+        </section>
+        <section class="bd_right col-d-4">
+            <div class="bd_wrap">
+                <img src="../img/daily_prophet.jpg" alt="daily prophet newspaper image" id="newspaper"/>
+                <div id="btn_wrap">
+                    <img src="../img/btn_link_default.png" alt="image link button" style="padding-bottom: 15px;" onclick="img_link()"/>
+                    <img src="../img/btn_enlarge_default.png" alt="image enlarge button" onclick="img_enlarge()"/>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    $(document).ready(function() {
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+        });
+
+
+
+        /*header color change*/
+        $("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+        //$("#header img:nth-child(1)").css("display","none");
+        $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+        $(".header_menu div").css("background-color","#333");
+
+
+        /*image height calc*/
+        var news_height = $("#newspaper").height();
+        $(".bd_wrap").css("height",news_height);
+    });
+
+    /*icon hover*/
+    $("#btn_wrap img:first-child").hover(function(){
+        $("#btn_wrap img:first-child").attr("src","../img/btn_link_hover.png");
+    }, function(){
+        $("#btn_wrap img:first-child").attr("src","../img/btn_link_default.png");
+    });
+
+    $("#btn_wrap img:last-child").hover(function(){
+        $("#btn_wrap img:last-child").attr("src","../img/btn_enlarge_hover.png");
+    }, function(){
+        $("#btn_wrap img:last-child").attr("src","../img/btn_enlarge_default.png");
+    });
+
+
+    function img_link(){
+        window.open("https://www.wizardingworld.com/writing-by-jk-rowling/the-daily-prophet");
+    }
+
+    function img_enlarge(){
+        $(".alert_bg").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+        var img_src = $("#newspaper").attr("src");
+        $(".alert_bg").html("<img src='"+ img_src +"' style='width: 30%; height: auto; " +
+            "position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);'/>");
+    }
+
+    $(".alert_bg").click(function () { //alert close
+        $(".alert_bg").css("display", "none");
+        $("body").css("overflow-y", "");
+    });
+
+
+    $(window).scroll(function(){
+        var presentTop = window.scrollY;
+        if(presentTop == "0"){
+            $("#header img:nth-child(1)").css("display","block");
+        }else{
+            $("#header img:nth-child(1)").css("display","none");
+        }
+    });
+</script>
+</html>

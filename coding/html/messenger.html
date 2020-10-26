@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+
+<body class="book_board chat clearfix">
+
+<!--bgm-->
+<audio id="mybgm" autoplay loop>
+    <source src="../bgm.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+</audio>
+
+<!--loading bg-->
+<div class="bg_down"></div>
+<div class="bg_black2"></div>
+
+<!--header-->
+<header class="col-d-12" id="header">
+    <img src="../img/logo_w.png" alt="logo">
+    <div class="header_menu">
+        <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+        <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+        <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+    </div>
+    <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+</header>
+
+<!--nav-->
+<nav class="col-d-4 nav_wrapper">
+    <!--main menu-->
+    <ul class="nav_main">
+        <li id="login">로그인 ∙ 회원가입</li>
+        <hr/>
+
+        <li>학교소개</li>
+        <!--학교소개-->
+        <ul class="nav_sub school">
+            <li>교가∙전통</li>
+            <li>언론보도</li>
+            <li>행정센터</li>
+        </ul>
+
+        <li>수강신청</li>
+        <!--수강신청-->
+        <ul class="nav_sub study">
+            <li>학사일정</li>
+            <li>신청하기</li>
+            <li>내 시간표</li>
+        </ul>
+
+        <li>도서관</li>
+        <!--도서관-->
+        <ul class="nav_sub library">
+            <li>신작</li>
+            <li>인기작</li>
+            <li>서평</li>
+        </ul>
+
+        <li>오시는 길</li>
+    </ul>
+    <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+    <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+</nav>
+
+<!--spell-->
+<div class="nav_spell col-d-4">
+    <div class="nav_input">
+        <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+        <i class="las la-angle-right"></i>
+        <!--<i class="las la-times"></i>-->
+    </div>
+    <span>#루모스</span>
+    <span>#녹스</span>
+    <span>#인센디오</span>
+    <span>#익스펙토 패트로눔</span>
+</div>
+<div class="nav_bg"></div>
+
+<div class="alert_bg"></div>
+
+<!--content-->
+<div class="contents clearfix col-d-12">
+    <section class="bd_title col-d-12">
+        <h2>부엉이 메신저</h2>
+    </section>
+    <section class="bd_left col-d-2" style="padding: 50px 0px 100px 0px;">
+        <p class="friend_title">친구 목록</p>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_her"></div>
+                <p class="friend_name">헤르미온느 그레인저</p>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_mal"></div>
+                <p class="friend_name chat_active">드레이코 말포이</p>
+                <div class="chat_active_dot"></div>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_ron"></div>
+                <p class="friend_name">론 위즐리</p>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_hag"></div>
+                <p class="friend_name chat_active">루베우스 해그리드</p>
+                <div class="chat_active_dot"></div>
+            </section>
+        </div>
+        <div class="friend_list">
+        <section class="friend_section">
+            <div class="profile friend_luna"></div>
+            <p class="friend_name">루나 러브굿</p>
+        </section>
+    </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_luffin"></div>
+                <p class="friend_name">리무스 루핀</p>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_nevile"></div>
+                <p class="friend_name">네빌 롱바텀</p>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_fluir"></div>
+                <p class="friend_name">플레르 델라쿠르</p>
+            </section>
+        </div>
+        <div class="friend_list">
+            <section class="friend_section">
+                <div class="profile friend_genie"></div>
+                <p class="friend_name">지니 위즐리</p>
+            </section>
+        </div>
+    </section>
+    <section class="bd_right chat col-d-10">
+        <p class="friend_title" style="margin-left: 50px; line-height: 25px;">채팅 목록</p>
+
+        <!--chatroom-->
+        <div class="chatroom clearfix">
+            <p class="friend_title title_btn">
+                <i class="las la-undo"></i>뒤로가기
+            </p>
+            <div class="chat_input col-d-12">
+                <input type="text" name="chat_text" placeholder="내용을 입력해주세요"/>
+                <i class="las la-angle-right"></i>
+            </div>
+            <div class="chat_wrap col-d-12">
+                <section class="chat_list">
+                    <div class="profile friend_hag"></div>
+                    <div class="chat_text">
+                        저기, 아까 본 거 … 비밀로 해줄 수 있겠니? 너도 알겠지만 '그걸' 키우는 건 불법이거든. 들키면 분명 난 학교에서 쫓겨날 거야.
+                    </div>
+                </section>
+                <section class="chat_list chat_me" style="height: 80px; display: block; width: max-content;">
+                    <div class="chat_only" style="margin-bottom: 20px;">
+                        걱정 마세요. 못본 걸로 할게요.
+                    </div>
+                </section>
+                <section class="chat_list chat_me" style="display: block; width: max-content;">
+                    <div class="chat_text">
+                        그래서 말인데요, '그게' 정확히 뭐예요? 그런 건 난생 처음 봐요.
+                    </div>
+                </section>
+                <section class="chat_list">
+                    <div class="profile friend_hag"></div>
+                    <div class="chat_text">
+                        아, '아라고그' 말이니? '애크로맨툴라'라는 종이야. 사람 말을 할 줄 아는 초대형 마법 생물이지!
+                    </div>
+                </section>
+                <section class="chat_list chat_me" style="display: block;">
+                    <div class="chat_text" style="width: auto;">
+                        정확히는 초대형 거미… 겠죠. 게다가 사람을 먹고요.
+                    </div>
+                </section>
+                <section class="chat_list">
+                    <div class="profile friend_hag"></div>
+                    <div class="chat_text" style="width: max-content;">
+                        얘, 우리 아라고그는 절대 그런 짓 안해! 😡
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!--list-->
+        <div class="friend_list pad_left clearfix">
+            <section class="friend_section col-d-3">
+                <div class="profile friend_her"></div>
+                <p class="friend_name">헤르미온느 그레인저</p>
+            </section>
+            <p class="chat_context col-d-7">너 이번 겨울방학에 뭐할거야? 아직 계획 없으면 나랑 어둠의 마법 방어술 과외 듣자.</p>
+            <p class="chat_date col-d-2">2020.09.16</p>
+        </div>
+        <div class="friend_devide"></div>
+
+        <div class="friend_list pad_left clearfix">
+            <section class="friend_section col-d-3">
+                <div class="profile friend_genie"></div>
+                <p class="friend_name">지니 위즐리</p>
+            </section>
+            <p class="chat_context col-d-7">오늘 왜 안왔어? 퀴디치 경기 완전 끝내줬는데! 그리핀도르 출신 선수가 슬리데린을 완전히 박살냈다고!</p>
+            <p class="chat_date col-d-2">2020.07.13</p>
+        </div>
+        <div class="friend_devide"></div>
+
+        <div class="friend_list pad_left clearfix">
+            <section class="friend_section col-d-3">
+                <div class="profile friend_luna"></div>
+                <p class="friend_name">루나 러브굿</p>
+            </section>
+            <p class="chat_context col-d-7">점술 수업 너무 지겨워… 넌 괜찮아? 졸려 보이는데.</p>
+            <p class="chat_date col-d-2">2020.07.11</p>
+        </div>
+        <div class="friend_devide"></div>
+
+        <div class="friend_list pad_left clearfix">
+            <section class="friend_section col-d-3">
+                <div class="profile friend_nevile"></div>
+                <p class="friend_name">네빌 롱바텀</p>
+            </section>
+            <p class="chat_context col-d-7">저기, 미안한데… 기숙사 암호가 뭐였지? 물론 학생 대표에게 물어봐도 되지만, 이번이 딱 열 번째라 …</p>
+            <p class="chat_date col-d-2">2020.06.10</p>
+        </div>
+        <div class="friend_devide"></div>
+    </section>
+</div>
+
+<!--footer-->
+<footer class="col-d-12 clearfix">
+    <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+    <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+    <div class="ft_container col-d-7">
+        <ul>
+            <li>유의사항</li>
+            <li>머글을 위한 사항</li>
+            <li>학생을 위한 사항</li>
+        </ul>
+        <ul>
+            <li>관련 사이트</li>
+            <li>트리위저드 시합</li>
+            <li>예언자일보</li>
+        </ul>
+        <ul>
+            <li>커뮤니티</li>
+            <li>부엉이 메신저</li>
+            <li>호울러</li>
+        </ul>
+    </div>
+    <div class="ft_container2 col-d-2">
+        <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+        <p>© 2019 Hogwarts School All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    $(document).ready(function() {
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+        });
+
+
+        var left_height = $(".book_board .contents .bd_left").css("height");
+        var calc_height = left_height.replace("px","");
+        var chatroom_height = $(".chatroom").css("height");
+        var chatroom_result = parseInt(chatroom_height.replace("px",""));
+        var chatroom_final = chatroom_result - 13 + "px";
+        console.log(chatroom_final);
+        $(".chatroom").css("height",calc_height);
+        $(".chat_wrap").css("height",chatroom_final);
+
+
+
+        /*header color change*/
+        $("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+        //$("#header img:nth-child(1)").css("display","none");
+        $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+        $(".header_menu div").css("background-color","#333");
+    });
+
+
+
+    $(".alert_bg").click(function () { //alert close
+        $(".alert_bg").css("display", "none");
+        $("body").css("overflow-y", "");
+    });
+
+
+
+    $(window).scroll(function(){
+        var presentTop = window.scrollY;
+        if(presentTop == "0"){
+            $("#header img:nth-child(1)").css("display","block");
+        }else{
+            $("#header img:nth-child(1)").css("display","none");
+        }
+    });
+
+
+
+    /*list hover*/
+    $(".bd_left .friend_section").mouseenter(function(){
+        $(".bd_left .friend_list").removeClass("bg_white bg_gray"); // 백그라운드 초기화
+        $(this).parents(".friend_list").addClass("bg_gray");
+    });
+
+    $(".bd_left .friend_section").mouseleave(function(){
+        $(this).parents(".friend_list").removeClass("bg_gray"); // 백그라운드 초기화
+        $(".bd_left .friend_list").removeClass("bg_white");
+    });
+
+    $(".bd_right .friend_list").hover(function() {
+        $(this).find("p").css({fontWeight: "600", color: "#333"});
+    }, function(){
+        $(this).find("p").css({fontWeight: "inherit", color: "#777"});
+    });
+
+
+
+
+
+    /* =====================================
+                    CHAT
+    ===================================== */
+
+    /*chat room enter*/
+    $(".friend_list").click(function(){
+        $(".bd_left .friend_list").removeClass("bg_white bg_gray bg_active"); // 백그라운드 초기화
+        if($(this).find(".chat_active_dot").length != 0){
+            $(this).find(".chat_active_dot").css("visibility","hidden");
+            $(this).find("p").css({fontWeight: "inherit", color: "#777"});
+        }
+        $(this).addClass("bg_active");
+        chat_enter();
+    });
+
+    function chat_enter(){
+        $(".chatroom").css("display","block");
+    }
+
+
+
+    /*chat room leave*/
+    $(".title_btn").click(function(){
+        $(".chatroom").css("display","none");
+        $(".friend_list").removeClass("bg_white bg_gray bg_active"); // 백그라운드 초기화
+    });
+
+
+
+    /*input typing*/
+    $(".chat_input input").keyup(function(){
+        var input_text = $(this).val();
+        $(".chat_input input").css("color","#777");
+        if(input_text != ""){
+            $(".chat_input i").attr("class","las la-times");
+        }else{
+            $(".chat_input i").attr("class","las la-angle-right");
+        }
+    });
+
+    $(".chat_input i").click(function(){ // x 클릭 시 입력된 텍스트 삭제
+        if($(".chat_input i").hasClass("la-times")){
+            $(".chat_input input").css("color","#777");
+            $(".chat_input input").val("");
+            $(".chat_input i").attr("class","las la-angle-right");
+        }
+    });
+
+
+
+    /*chat*/
+    var chat_typed;
+
+    $(".chat_input").keydown(function(key){ // typing submit
+        if(key.keyCode == 13){
+            chat_typed = $(".chat_input input").val();
+            chat_add(chat_typed);
+        }
+    });
+
+    function chat_add(chat_typed){ // html add
+        var last_chat = $(".chat_list").last().parents(".chat_wrap");
+        var chat_bottom = $(".chat_wrap").offset().top + $(".chat_wrap").outerHeight(true);
+        console.log(last_chat);
+        $(last_chat).append("<section class='chat_list chat_me' style='display: block;'>" +
+                            "<div class='chat_text' style='width: max-content;'>" + chat_typed + "</div></section>");
+        $(".chat_wrap").animate({ scrollTop: $(".chat_wrap").prop("scrollHeight")}, 1000); // scroll to bottom
+    }
+</script>
+</html>

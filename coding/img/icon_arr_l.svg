@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>icon / arrow / white</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon-/-arrow-/-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-arrow-/-default" transform="translate(5.500000, 8.000000) scale(-1, 1) translate(-5.500000, -8.000000) ">
+            <rect id="Rectangle" x="0" y="0" width="11" height="16"></rect>
+            <polyline id="Path" stroke="#FFFFFF" stroke-linecap="round" points="1 1 10 8 1 15"></polyline>
+        </g>
+    </g>
+</svg>

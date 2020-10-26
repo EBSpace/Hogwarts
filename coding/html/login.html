@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+
+<body class="login clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_b.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_b.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--contents-->
+    <main class="clearfix">
+        <form class="log_sec1 login_form col-d-8 clearfix"><!--login-->
+            <div class="input_wrap col-d-6">
+                <!--name-->
+                <div class="log_input first">
+                    <span>이름</span>
+                    <input type="text" name="name" placeholder="이름을 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <!--id-->
+                <div class="log_input">
+                    <span>아이디</span>
+                    <input type="text" name="id" placeholder="아이디를 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <!--dormitory-->
+                <div class="log_input">
+                    <span>기숙사</span>
+                    <select name="dorm" id="log_select">
+                        <option value="">기숙사를 선택해주세요</option>
+                        <option value="gry">그리핀도르</option>
+                        <option value="rav">래번클로</option>
+                        <option value="huf">후플푸프</option>
+                        <option value="sly">슬리데린</option>
+                    </select>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+            </div>
+            <!--password-->
+            <div class="pw_wrap col-d-6">
+                <div class="log_input pw_gry first"> <!--gry-->
+                    <span>비밀번호</span>
+                    <input type="text" name="pw" placeholder="비밀번호를 입력해주세요"/>
+                    <img src="../img/anticon.svg" class="pw_anticon" id="gry_ant"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                    <!--<div class="tooltip_ant">캐풋 드레이코니스</div>-->
+                </div>
+
+                <div class="log_input pw_rav first"> <!--rav-->
+                    <span>비밀번호</span>
+                    <input type="text" name="pw" placeholder="Q. 닭이 먼저일까요, 알이 먼저일까요?" disabled/>
+                    <img src="../img/anticon.svg" class="pw_anticon" id="rav_ant"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active" style="margin: 10px;"></div>
+                    <input type="text" name="pw_2" id="rav_answer" placeholder="A. 답변을 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <div class="log_input pw_huf first"> <!--huf-->
+                    <span>비밀번호</span>
+                    <input type="text" name="pw" placeholder="Q. 아래 원 중 '헬가 후플푸프'의 리듬을 클릭해주세요"/>
+                    <img src="../img/anticon.svg" class="pw_anticon" id="huf_ant"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                    <div class="huf_circle clearfix">
+                        <div class="huf_margin clearfix">
+                            <div class="col-d-2" id="huf_one"><span></span></div>
+                            <div class="col-d-2" id="huf_two"><span></span></div>
+                            <div class="col-d-2" id="huf_three"><span></span></div>
+                            <div class="col-d-2" id="huf_four"><span></span></div>
+                            <div class="col-d-2" id="huf_five"><span></span></div>
+                            <div class="col-d-2" id="huf_six"><span></span></div>
+                        </div>
+                        <div class="huf_margin clearfix">
+                            <div class="col-d-2" id="huf_seven"><span></span></div>
+                            <div class="col-d-2" id="huf_eight"><span></span></div>
+                            <div class="col-d-2" id="huf_nine"><span></span></div>
+                            <div class="col-d-2" id="huf_ten"><span></span></div>
+                            <div class="col-d-2" id="huf_eleven"><span></span></div>
+                            <div class="col-d-2" id="huf_twelve"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="log_input pw_sly first"> <!--sly-->
+                    <span>비밀번호</span>
+                    <input type="text" name="pw" placeholder="비밀번호를 입력해주세요"/>
+                    <img src="../img/anticon.svg" class="pw_anticon" id="sly_ant"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+            </div>
+            <div class="log_btn">
+                <span>회원가입은 이곳으로</span> <!--join-->
+                <button type="button">작성 완료</button>
+            </div>
+        </form>
+        <form class="log_sec1 join_form col-d-8 clearfix"><!--join-->
+            <div class="input_wrap col-d-6">
+                <!--name-->
+                <div class="log_input first">
+                    <span>이름</span>
+                    <input type="text" name="name" placeholder="이름을 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <!--id-->
+                <div class="log_input">
+                    <span>아이디</span>
+                    <input type="text" name="id" placeholder="아이디를 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <!--gender-->
+                <div class="log_input">
+                    <span style="width: 100%;">성별</span>
+                    <div class="radio_wrap">
+                        <input type="radio" name="gender" value="여성" id="female"/>
+                        <label for="female">여성</label>
+                    </div>
+                    <div class="radio_wrap">
+                        <input type="radio" name="gender" value="남성" id="male"/>
+                        <label for="male">남성</label>
+                    </div>
+                </div>
+
+                <!--check-->
+                <div class="log_input">
+                    <span style="width: 100%;">약관 동의</span>
+                    <div class="check_wrap">
+                        <input type="checkbox" name="logcheck" id="log_check"/>
+                        <label for="log_check"></label>
+                        <p>나는 금지된 숲 출입 제한을 포함한 모든 안전 유지 정책에 동의합니다</p>
+                    </div>
+                </div>
+            </div>
+            <div class="add_wrap col-d-6">
+                <!--address-->
+                <div class="log_input first">
+                    <span>주소</span>
+                    <input type="text" name="address" placeholder="주소를 입력해주세요"/>
+                    <div class="log_line"></div>
+                    <div class="log_line_active"></div>
+                </div>
+
+                <!--dormitory-->
+                <div class="log_input log_dorm">
+                    <span>기숙사 선택</span>
+                    <input type="text" name="sort" placeholder="분류 모자를 클릭해주세요" disabled/>
+                    <img src="../img/ion_hat_g.png" alt="hat icon" id="hat"/>
+                    <div class="log_line" id="dorm_line_ori"></div>
+                    <div class="log_line_active" id="dorm_line_active"></div>
+                </div>
+
+                <!--born-->
+                <div class="log_input">
+                    <span style="width: 100%;">태생</span>
+                    <div class="radio_wrap">
+                        <input type="radio" name="born" value="머글" id="muggle"/>
+                        <label for="muggle">머글</label>
+                    </div>
+                    <div class="radio_wrap">
+                        <input type="radio" name="born" value="마법사" id="wizard"/>
+                        <label for="wizard">마법사</label>
+                    </div>
+                    <div class="radio_wrap">
+                        <input type="radio" name="born" value="혼혈" id="halfblood"/>
+                        <label for="halfblood">혼혈</label>
+                    </div>
+                </div>
+            </div>
+            <div class="log_btn">
+                <span>회원가입은 이곳으로</span>
+                <button type="button">작성 완료</button>
+            </div>
+        </form>
+        <section class="log_sec2 col-d-4">
+            <img src="../img/logo_emblem_b.svg"/>
+        </section>
+    </main>
+
+
+    <!--alert-->
+    <div class="alert_container col-d-4">
+        <span>회원가입 불가</span>
+        <i class="las la-home"></i>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="alert_content">
+            <img src="../img/alert_x.png" alt="join refuse image"/>
+            <p>빈 항목이 없도록 내용을 입력해주세요</p>
+        </div>
+    </div>
+    <div class="alert_hat">
+        <img src="../img/ion_hat_w.svg" alt="hat icon"/>
+        <div class="hat_container">
+            <ul class="text_wrap">
+                <li class="hat_text">자네를 어디에 넣으면 좋을까?</li>
+                <li class="hat_text">음… 어렵군, 아주 어려워.</li>
+                <li class="hat_text">내면에 용기와 재능이 충만하군.</li>
+                <li class="hat_text">그럼… 어디가 좋을까?</li>
+                <li class="hat_text">좋아, 정했어!</li>
+            </ul>
+        </div>
+        <span id="hat_decision"></span>
+    </div>
+    <div class="alert_bg"></div>
+
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+    <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+    <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+    <div class="ft_container col-d-7">
+        <ul>
+            <li>유의사항</li>
+            <li>머글을 위한 사항</li>
+            <li>학생을 위한 사항</li>
+        </ul>
+        <ul>
+            <li>관련 사이트</li>
+            <li>트리위저드 시합</li>
+            <li>예언자일보</li>
+        </ul>
+        <ul>
+            <li>커뮤니티</li>
+            <li>부엉이 메신저</li>
+            <li>호울러</li>
+        </ul>
+    </div>
+    <div class="ft_container2 col-d-2">
+        <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+        <p>© 2019 Hogwarts School All Rights Reserved.</p>
+    </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    $(document).ready(function() {
+        var logName;
+        var logId;
+        var logDorm;
+        var logPw;
+        var loggender;
+        var logcheck;
+        var logaddress;
+        var logsort;
+        var logborn;
+        var current_page;
+
+
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+        });
+
+
+        /*login input typing animation*/
+        $(".login input[type=text]").keyup(function () {
+            var input_text = $(this).val();
+            var log_this = $(this);
+            var log_siblings = log_this.next().next();
+            //console.log(log_siblings);
+
+            if (input_text != "") {
+                $(log_siblings).animate({width: "100%"}, 300);
+            } else {
+                $(log_siblings).animate({width: "0%"}, 300);
+            }
+        });
+
+        /*login selected*/
+        $("#log_select").change(function () {
+            var std_selected = $("#log_select option:selected").val();
+            var std_siblings = $(this).next().next();
+            //console.log(std_siblings);
+            if (std_selected != "") {
+                $(std_siblings).animate({width: "100%"}, 300);
+            } else {
+                $(std_siblings).animate({width: "0%"}, 300);
+            }
+
+            /*dorm divide*/
+            switch (std_selected) {
+                case "gry" :
+                    $(".pw_wrap .log_input").not(".pw_gry").css("display", "none");
+                    $(".pw_gry").css("display", "block");
+                    break;
+
+                case "rav" :
+                    $(".pw_wrap .log_input").not(".pw_rav").css("display", "none");
+                    $(".pw_rav").css("display", "block");
+                    break;
+
+                case "huf" :
+                    $(".pw_wrap .log_input").not(".pw_huf").css("display", "none");
+                    $(".pw_huf").css("display", "block");
+                    break;
+
+                case "sly" :
+                    $(".pw_wrap .log_input").not(".pw_sly").css("display", "none");
+                    $(".pw_sly").css("display", "block");
+                    break;
+            }
+        });
+
+
+        /*huf circle css*/
+        $(".huf_margin div span").click(function () {
+            $(this).css("background-color", "#777");
+            $(this).addClass("circle_active");
+            clearInterval(huf_interval);
+            $(".huf_margin div span").not(this).css("background-color", "");
+            $(".huf_margin div span").not(this).removeClass("circle_active");
+        });
+
+
+        /*hat click*/
+        $("#hat").hover(function () {
+            $("#hat").attr("src", "../img/ion_hat_b.png");
+        }, function () {
+            $("#hat").attr("src", "../img/ion_hat_g.png");
+        });
+
+        $("#hat").click(function () {
+            var hat_random = Math.ceil(Math.random() * 4);
+            $(".alert_bg, .alert_hat, .hat_container").css("display", "block");
+            setTimeout(function () {
+                $(".text_wrap").animate({opacity: "0"}, 400, "easeInCubic");
+            }, 7000);
+            setTimeout(function () {
+                $(".hat_container").css("display", "none");
+                $("#hat_decision").css("display", "block");
+                $("#hat_decision").animate({opacity: "1"}, 400, "easeInCubic");
+
+                switch (hat_random) {
+                    case 1:
+                        $("#hat_decision").text("그리핀도르!");
+                        logsort = $(".add_wrap .log_input input[name=sort]").val("그리핀도르");
+                        setTimeout(function () {
+                            $(".alert_bg").css("background-color", "rgba(107,85,85,0.8)");
+                        }, 200);
+                        break;
+                    case 2:
+                        $("#hat_decision").text("래번클로!");
+                        logsort = $(".add_wrap .log_input input[name=sort]").val("래번클로");
+                        setTimeout(function () {
+                            $(".alert_bg").css("background-color", "rgba(81,86,101,0.8)");
+                        }, 200);
+                        break;
+                    case 3:
+                        $("#hat_decision").text("후플푸프!");
+                        logsort = $(".add_wrap .log_input input[name=sort]").val("후플푸프");
+                        setTimeout(function () {
+                            $(".alert_bg").css("background-color", "rgba(99,93,86,0.8)");
+                        }, 200);
+                        break;
+                    case 4:
+                        $("#hat_decision").text("슬리데린!");
+                        logsort = $(".add_wrap .log_input input[name=sort]").val("슬리데린");
+                        setTimeout(function () {
+                            $(".alert_bg").css("background-color", "rgba(95,95,84,0.8)");
+                        }, 200);
+                        break;
+                }
+            }, 7400);
+            setTimeout(function () {
+                $(".alert_bg, .alert_hat").css("display", "none");
+                $(".alert_hat").css("background-color", "rgba(51,51,51,0.9)");
+                $("#hat").off("click");
+            }, 9500);
+        });
+
+
+        /*login submit*/
+        $(".login .log_sec1 button").click(function () {
+            if ($(".login_form .log_btn span").text() == "회원가입은 이곳으로") {
+                logName = $(".login_form .log_input input[name=name]").val();
+                logId = $(".login_form .log_input input[name=id]").val();
+                logDorm = $(".login_form #log_select option:selected").val();
+
+                switch (logDorm) {
+                    case "gry":
+                        logPw = $(".pw_gry input").val();
+                        break;
+
+                    case "rav":
+                        logPw = $(".log_input input[name=pw_2]").val();
+                        break;
+
+                    case "huf":
+                        logPw = $(".circle_active").parent("div").attr("id");
+                        break;
+
+                    case "sly":
+                        logPw = $(".pw_sly input").val();
+                        break;
+                }
+                //console.log(logName+" / "+logId+" / "+logDorm);
+
+                if (logName != null && logId != null && logDorm != null && logPw != null) {
+                    current_page = "login";
+                    sessionStorage.setItem("ses_name", logName);
+                    sessionStorage.setItem("ses_id", logId);
+                    sessionStorage.setItem("ses_dorm", logDorm);
+                    if (logPw == "캐풋 드레이코니스" || logPw == "huf_six" || logPw == "원에는 시작점이 없다" || logPw == "순수혈통") {
+                        console.log("logPw : " + logPw);
+                        sessionStorage.setItem("ses_pw", logPw);
+                        access_granted(current_page);
+                    } else {
+                        access_denied();
+                    }
+                } else {
+                    $(".alert_bg").css("display", "block");
+                    $(".alert_container").css("display", "block");
+                    $("body").css("overflow-y", "hidden");
+                }
+            } else {
+                logName = $(".join_form .log_input input[name=name]").val();
+                logId = $(".join_form .log_input input[name=id]").val();
+                loggender = $(".join_form input:radio[name=gender]:checked").val();
+                logcheck = $(".join_form input:checkbox[name=logcheck]").is(":checked");
+                logaddress = $(".add_wrap .log_input input[name=address]").val();
+                logsort = $(".add_wrap .log_input input[name=sort]").val();
+                logborn = $(".add_wrap input:radio[name=born]:checked").val();
+                current_page = "join";
+                //console.log(logName+" / "+logId+" / "+loggender+" / "+logcheck+" / "+logaddress+" / "+logsort+" / "+logborn);
+
+                if (logName != null && logId != null && loggender != null && logcheck != null && logaddress != null && logsort != null && logborn != null) {
+                    sessionStorage.setItem("ses_name", logName);
+                    sessionStorage.setItem("ses_id", logId);
+                    sessionStorage.setItem("ses_gender", loggender);
+                    sessionStorage.setItem("ses_check", logcheck);
+                    sessionStorage.setItem("ses_address", logaddress);
+                    sessionStorage.setItem("ses_sort", logsort);
+                    sessionStorage.setItem("ses_born", logborn);
+                    $(".alert_container i").attr("class", "las la-door-open");
+                    access_granted(current_page);
+                } else {
+                    $(".alert_bg").css("display", "block");
+                    $(".alert_container").css("display", "block");
+                    $("body").css("overflow-y", "hidden");
+                }
+            }
+        });
+
+
+        /*access*/
+        function access_granted(cp) { //granted
+            if(cp == "login"){
+                $(".alert_container span").text("입장 허가");
+                $(".alert_container p").text("호그와트 마법 학교에 오신 것을 환영합니다!");
+            }else {
+                $(".alert_container span").text("회원가입 승인");
+                $(".alert_container p").text("회원가입이 완료되었습니다");
+            }
+            $(".alert_content img").attr("src", "../img/alert_check.png");
+            $("#alert_close").css("display", "none");
+            $(".alert_container i").css("display", "block");
+            $(".alert_bg").css("display", "block");
+            $(".alert_container").css("display", "block");
+            $("body").css("overflow-y", "hidden");
+        }
+
+        function access_denied() { //denied
+            $(".alert_content img").attr("src", "../img/alert_x.png");
+            $(".alert_container span").text("입장 불가");
+            $("#alert_close").css("display", "block");
+            $(".alert_container i").css("display", "none");
+            $(".alert_container p").text("비밀번호가 맞지 않습니다");
+            $(".alert_bg").css("display", "block");
+            $(".alert_container").css("display", "block");
+            $("body").css("overflow-y", "hidden");
+        }
+
+
+        /*alert*/
+        $(".alert_container img").click(function () { //alert close
+            $(".alert_bg").css("display", "none");
+            $(".alert_container").css("display", "none");
+            $("body").css("overflow-y", "");
+        });
+
+        $(".alert_container i").click(function () { //go to other page
+            $(".alert_bg").css("display", "none");
+            $(".alert_container").css("display", "none");
+            $("body").css("overflow-y", "");
+            if ($(".alert_container i").hasClass("las la-door-open")) {
+                if($(".alert_container p").text() == "회원가입이 완료되었습니다"){
+                    login_open();
+                }else{
+                    location.href = "./main.html";
+                }
+            } else {
+                location.href = "./main.html";
+            }
+        });
+
+
+        /*join*/
+        $(".log_btn span").click(function () {
+            var sec1_left = Number(100 - 66.66) + "%";
+            var sec2_left = Number(100 - 33.33) + "%";
+
+            if ($(".login_form .log_btn span").text() == "회원가입은 이곳으로") {
+                $(".log_sec2").css("animation", "log_left 0.6s forwards");
+                $(".login_form").animate({left: sec1_left}, 500, "easeInCubic");
+                $(".login_form .log_btn span, .join_form .log_btn span").text("로그인은 이곳으로");
+                $(".join_form").animate({left: sec1_left}, 500, "easeInCubic");
+                setTimeout(function () {
+                    $(".join_form").css("display", "block");
+                    $(".login_form").css("display", "none");
+                }, 400);
+            } else {
+                login_open();
+            }
+            $(".login_form, .join_form").css("left", "0%");
+        });
+
+
+
+        /*checkbox checked*/
+        $(".log_input p").click(function () {
+            if ($(".log_input input:checkbox[id='log_check']").is(":checked") == false) {
+                $(".log_input input:checkbox[id='log_check']").prop("checked", true);
+            } else {
+                $(".log_input input:checkbox[id='log_check']").prop("checked", false);
+            }
+        });
+    });
+</script>
+</html>

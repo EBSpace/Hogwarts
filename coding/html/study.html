@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+     
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+    
+<body class="study clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--alert-->
+    <div class="alert_container col-d-4">
+        <span>회원가입 불가</span>
+        <i class="las la-home"></i>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="table_content">
+            <table>
+                <tr class="table_category">
+                    <td>과목명</td>
+                    <td>강사명</td>
+                    <td>학점</td>
+                    <td>시간</td>
+                    <td>강의실</td>
+                </tr>
+                <tr class="table_list">
+                    <td>천문학</td>
+                    <td>오로라 시니스트라</td>
+                    <td>1학점</td>
+                    <td><p>MON</p> 21:00 - 22:00</td>
+                    <td>첨탑 천문대</td>
+                </tr>
+            </table>
+            <div class="class_seat clearfix">
+                <div class="prof_seat col-d-12">교탁</div>
+                <ul class="seat_line col-d-12" style="margin-top: 50px;">
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                </ul>
+                <ul class="seat_line col-d-12">
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                </ul>
+                <ul class="seat_line col-d-12">
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                </ul>
+                <ul class="seat_line col-d-12">
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_active">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li>
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                    <li class="seat_none">
+                        <div class="seat_margin"></div>
+                        <div></div>
+                    </li>
+                </ul>
+                <span>
+                    ※ 해당 과목의 잔여 신청 가능 인원은 <p class="people_num">28명</p>입니다.<br/>
+                    ※ 빈 좌석을 선택한 뒤 '신청하기' 버튼을 누르면 수강 신청이 완료됩니다.<br/>
+                    ※ 좌석 선택을 취소하려면 선택하신 좌석을 다시 클릭해주세요.
+                </span>
+                <button id="table_btn" onclick="access_granted()">신청하기</button>
+            </div>
+        </div>
+        <div class="alert_content">
+            <img src="../img/alert_x.png" alt="join refuse image"/>
+            <p>빈 항목이 없도록 내용을 입력해주세요</p>
+        </div>
+    </div>
+    <div class="alert_bg"></div>
+
+
+    <!--page1-->
+    <div class="page1 clearfix col-d-12">
+        <section class="sec1 clearfix">
+            <div class="col-d-6 title">
+                <p>STUDY</p>
+                <span>CLASS APPLY</span>
+            </div>
+            <div class="cont_wrap">
+                <span>ACADEMIC CALENDAR</span>
+                <span>CLASS APPLY</span>
+                <span>MY CLASS</span>
+            </div>
+        </section>
+    </div>
+        
+        
+    <!--page2-->
+    <div class="page2 clearfix col-d-12">
+        <img class="left_img col-d-4" alt="calendar image" src="../img/slytherin/hogwarts_express.png"/>
+        <div class="clearfix contents_left col-d-3">
+            <section class="sec2 col-d-12">
+                <span>ACADEMIC<br/>CALENDAR</span>
+                <!--<div class="arr_container">
+                    <img class="arr_btns" src="../img/icon_arr_l.svg" alt="prev button" id="prev_arr" data-lang="1"/>
+                    <img class="arr_btns" src="../img/icon_arr_r.svg" alt="next button" id="next_arr" data-lang="1"/>
+                </div>-->
+            </section>
+        </div>
+
+        <div class="contents_right clearfix col-d-9">
+            <img class="num_img" alt="calendar number" src="../img/slytherin/09.png"/>
+            <section class="sec3_sub col-d-6">
+                <span>
+                    <p>새 학년, 새 학기 시작</p>
+                    1) 런던 킹스크로스 역 9와 3/4 승강장에서 호그와트행 급행열차를 탑승합니다.<br/>
+                    2) 호그스미드 역에 도착해 호그와트로 이동합니다.<br/>
+                    3) 호그와트 연회장에서 마법의 분류 모자를 이용한 기숙사 배정식이 있습니다.<br/>
+                    <br/>
+                    ※ 신입생 환영 만찬<br/>
+                    1) 식사 : 구운 쇠고기 및 닭고기, 돼지 및 양 갈비살, 소시지와 베이컨, 스테이크, 삶거나 구운 감자, 감자 튀김, 요크셔 푸딩, 그레이비 소스<br/>
+                    2) 후식 : 각종 맛이 나는 아이스크림, 애플 파이, 당밀 타르트, 초콜릿 에클레어, 잼 도너츠, 트라이플, 쌀 푸딩, 딸기, 젤리<br/>
+                    <br/>
+                    ※ 첫 번째 아침 식사 때 담당 교수, 또는 반장이 수업 시간표 배부 (둘째 주 토요일은 퀴디치팀 선발 시합이 예정되어 있으며, 1학년들은 비행 수업을 받습니다.)
+                </span>
+            </section>
+            <img id="snitch" alt="golden snitch" src="../img/slytherin/golden_snitch.png"/>
+        </div>
+        <section class="option_wrap clearfix col-d-9">
+            <hr id="opt_line1"/>
+            <hr id="opt_line2"/>
+            <div class="circle_wrap col-d-12">
+                <div class="opt_circle">
+                    <div class="opt_circle_sub"></div>
+                </div>
+                <div class="opt_circle">
+                    <div class="opt_circle_sub"></div>
+                </div>
+                <div class="opt_circle">
+                    <div class="opt_circle_sub"></div>
+                </div>
+                <div class="opt_circle">
+                    <div class="opt_circle_sub"></div>
+                </div>
+                <div class="opt_circle">
+                    <div class="opt_circle_sub"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!--page3-->
+    <div class="page3 clearfix col-d-12">
+        <div class="pg3_right col-d-9" style="height: 158px">
+            <span style="margin: 0;">CLASS<br/>APPLY</span>
+            <select name="grade">
+                <option value="1st">1학년</option>
+                <option value="2nd">2학년</option>
+                <option value="3rd">3학년</option>
+                <option value="4th">4학년</option>
+                <option value="5th">5학년</option>
+                <option value="6th">6학년</option>
+                <option value="7th">7학년</option>
+                <option value="8th">8학년</option>
+            </select>
+        </div>
+        <section class="class_table col-d-9">
+            <table>
+                <tr class="table_category">
+                    <td>과목명</td>
+                    <td>강사명</td>
+                    <td>학점</td>
+                    <td>시간</td>
+                    <td>강의실</td>
+                    <td>신청/제한인원</td>
+                    <td>신청여부</td>
+                </tr>
+                <tr class="table_list">
+                    <td>천문학</td>
+                    <td>오로라 시니스트라</td>
+                    <td>1학점</td>
+                    <td><p>MON</p> 21:00 - 22:00</td>
+                    <td>첨탑 천문대</td>
+                    <td><p style="padding: 0;">12</p>/42</td>
+                    <td>신청완료</td>
+                </tr>
+                <tr class="table_list">
+                    <td>약초학</td>
+                    <td>포모나 스프라우트</td>
+                    <td>2학점</td>
+                    <td><p>TUE</p> 09:00 - 11:00</td>
+                    <td>1층 온실</td>
+                    <td><p style="padding: 0;">50</p>/50</td>
+                    <td>신청완료</td>
+                </tr>
+                <tr class="table_list">
+                    <td>변신술</td>
+                    <td>미네르바 맥고나걸</td>
+                    <td>4학점</td>
+                    <td><p>WED</p> 13:00 - 16:00</td>
+                    <td>4층 5번 강의실</td>
+                    <td><p style="padding: 0;">40</p>/40</td>
+                    <td><a onclick="class_apply(1)">신청하기</a></td>
+                </tr>
+                <tr class="table_list">
+                    <td>마법약</td>
+                    <td>세베루스 스네이프</td>
+                    <td>4학점</td>
+                    <td><p>THU</p> 16:00 - 20:00</td>
+                    <td>지하 1번 강의실</td>
+                    <td><p style="padding: 0;">20</p>/60</td>
+                    <td>신청완료</td>
+                </tr>
+                <tr class="table_list">
+                    <td>역사학</td>
+                    <td>커스버트 빈스</td>
+                    <td>2학점</td>
+                    <td><p>FRI</p> 10:00 - 12:00</td>
+                    <td>2층 3번 강의실</td>
+                    <td><p style="padding: 0;">35</p>/40</td>
+                    <td><a onclick="class_apply(2)">신청하기</a></td>
+                </tr>
+                <tr class="table_list">
+                    <td>비행술</td>
+                    <td>롤랜다 후치</td>
+                    <td>3학점</td>
+                    <td><p>MON</p> 14:00 - 17:00</td>
+                    <td>대운동장</td>
+                    <td><p style="padding: 0;">15</p>/15</td>
+                    <td>신청완료</td>
+                </tr>
+                <tr>
+                   <td colspan="7" style="color: #aaa">※ 1학년은 비행술 수업 시간을 제외하고 빗자루를 소유하거나 탑승할 수 없습니다.</td>
+                </tr>
+            </table>
+            <div class="pagination">
+                <img src="../img/btn_arr_g_l.svg" alt="pagination previous button"/>
+                <span class="pag_active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <img src="../img/btn_arr_g_r.svg" alt="pagination next button"/>
+            </div>
+        </section>
+    </div>
+
+
+    <!--fullbanner-->
+    <section class="fullbanner col-d-12">
+        <div class="banner_title">
+            <span>It does not do to dwell on dreams<br/>and forget to live.</span>
+            <p>ALBUS DUMBLEDORE</p>
+        </div>
+    </section>
+
+
+    <!--page4-->
+    <div class="page4 clearfix col-d-12">
+        <div class="pg3_right col-d-9" style="height: 156px;">
+            <span style="margin: 0;">MY<br/>CLASS</span>
+        </div>
+        <div class="pg4_bg col-d-2">
+            <div class="page_wrap">
+                <a>도서관으로 이동<img src="../img/btn_arr_g.svg" alt="go to library page"/></a>
+                <div class="gif_wrap">
+                    <div class="shape_rectangle"></div>
+                </div>
+            </div>
+        </div>
+        <section class="class_table col-d-9">
+            <table>
+                <tr class="table_category">
+                    <td>SUN</td>
+                    <td>MON</td>
+                    <td>TUE</td>
+                    <td>WED</td>
+                    <td>THU</td>
+                    <td>FRI</td>
+                    <td>SAT</td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td rowspan="3" id="herb" class="underline_class">약초학</td>
+                    <td></td>
+                    <td></td>
+                    <td id="stargaze" class="underline_class">천문학</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td rowspan="4" id="potion" class="underline_class">마법약</td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2" id="transform" class="underline_class">변신술</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="3" id="jump" class="underline_class">순간 이동</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td rowspan="2" id="flight" class="underline_class">비행술</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="tr_underline">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    
+    
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    var scrolltop = window.scrollY;
+    var windowheight = $(window).height();
+    var circle_bool = true;
+    // var ses_spell = sessionStorage.getItem("ses_spell");
+
+
+
+    $(document).ready(function(){
+        console.log("ses_spell_first : " + ses_spell);
+
+        /*parameter using*/
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var submenu = getParameterByName("submenu");
+        switch(submenu){
+            case "신청하기":
+                var scroll_position = $(".sec1").outerHeight() * 2;
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+            case "내 시간표":
+                var scroll_position = $(".sec1").outerHeight() * 3 + 390 + "px";
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+        }
+
+
+
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+            setTimeout(function (){
+                $(".study .title p").css("animation","up 0.7s forwards");
+                $(".study .title span").css("animation","up 0.7s 0.3s forwards");
+                $(".study .cont_wrap span:nth-child(1)").css("animation","up 0.7s 0.6s forwards");
+                $(".study .cont_wrap span:nth-child(2)").css("animation","up 0.7s 0.9s forwards");
+                $(".study .cont_wrap span:nth-child(3)").css("animation","up 0.7s 1.2s forwards");
+            }, 1200);
+        });
+
+
+
+        /*moving background img*/
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".sec1").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $(".sec1").css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+
+
+
+        $(window).scroll(function(){
+            scrolltop = window.scrollY;
+            if(scrolltop >= windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+                $("#header img:nth-child(1)").css("display","none");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+                $(".header_menu div").css("background-color","#333");
+
+                // 애니메이션 한 번만 실행 (scroll 할때마다 실행되지 않게 하기 위해서)
+                setTimeout(function(){
+                    $(".study .left_img").one("animate",function(){
+                        $(".study .left_img").animate({left:"-120px"},600);
+                    });
+                },100);
+
+                if(circle_bool == true){
+                    var circle_next = 1;
+                    historyCircle(circle_next);
+                    circle_bool = false;
+                }
+            }else if(scrolltop < windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_w.png");
+                $("#header img:nth-child(1)").css("display","block");
+                $(".header_menu div").css("background-color","#fff");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_w.png");
+            }
+        });
+
+
+
+        // circle_lopp 첫번째 circle에 클래스 부여 -> css 색상 변경
+        $(".study .opt_circle:first-child").addClass("opt_active_"+ses_dorm+"_outside");
+        $(".study .opt_circle:first-child div").addClass("opt_active_"+ses_dorm+"_inside");
+        $(".study .opt_circle_sub").addClass("opt_circle_sub_"+ses_dorm);
+
+        // seat_choice 색상 부여
+        $(".study .seat_active div").addClass("chosen_"+ses_dorm);
+    });
+
+
+    /*scroll(for click)*/
+    $(".study .cont_wrap span:first-child").click(function(){
+        var scroll_position = $(".sec1").outerHeight();
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+        $(".study .contents_right .sec3_sub span").addClass("up");
+        setTimeout(function(){
+            $(".study .left_img").animate({left:"-120px"},600);
+        },100);
+    });
+
+    $(".study .cont_wrap span:nth-child(2)").click(function(){
+        var scroll_position = $(".sec1").outerHeight() * 2;
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".study .cont_wrap span:nth-child(3)").click(function(){
+        var scroll_position = $(".sec1").outerHeight() * 3 + 390 + "px";
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+
+
+    /*circle loop (재귀함수)*/
+    var circle_array = ["0%","23%","43%","65%","88%"];
+    function historyCircle(circleNum){
+        $(".study .contents_right .sec3_sub span").addClass("up");
+        var percent_result = circle_array[circleNum]; // circle_array 배열에서 하나씩 빼옴
+        $(".study .option_wrap #opt_line2").animate({width : percent_result},8000, function(){
+            circleNum++;
+            $(".circle_wrap .opt_circle").removeClass("opt_active_"+ses_dorm+"_outside");
+            $(".circle_wrap .opt_circle div").removeClass("opt_active_"+ses_dorm+"_inside");
+            $(".circle_wrap .opt_circle:nth-child("+circleNum+")").addClass("opt_active_"+ses_dorm+"_outside");
+            $(".circle_wrap .opt_circle:nth-child("+circleNum+") div").addClass("opt_active_"+ses_dorm+"_inside");
+            change_text(circleNum);
+
+            circleNum = circleNum >= 5 ? 0 : circleNum;
+
+            return historyCircle(circleNum);
+        });
+    }
+
+    function change_text(circleNum){
+        $(".study .contents_right .sec3_sub span").css("animation-delay","");
+        switch(circleNum){
+            case 1:
+                $(".study .option_wrap #opt_line1").css("background-color","#e4e4df");
+                switch (ses_dorm) {
+                    case "sly":
+                        $(".study .left_img").attr("src", "../img/slytherin/hogwarts_express.png");
+                        $(".study .num_img").attr("src", "../img/slytherin/09.png");
+                    break;
+
+                    case "gry":
+                        $(".study .left_img").attr("src", "../img/gryffindor/hogwarts_express.png");
+                        $(".study .num_img").attr("src", "../img/gryffindor/09.png");
+                    break;
+
+                    case "rav":
+                        $(".study .left_img").attr("src", "../img/ravenclaw/hogwarts_express.png");
+                        $(".study .num_img").attr("src", "../img/ravenclaw/09.png");
+                    break;
+
+                    case "huf":
+                        $(".study .left_img").attr("src", "../img/hufflepuff/hogwarts_express.png");
+                        $(".study .num_img").attr("src", "../img/hufflepuff/09.png");
+                    break;
+                }
+
+                $(".study .left_img").css("opacity","1");
+                $(".study .left_img").css({left: "-280px", bottom: "180px", height: "auto", width: "50%"});
+                $(".study .left_img").animate({left: "-120px"},700);
+                $(".study .contents_right .sec3_sub span").html("<p>새 학년, 새 학기 시작</p>" +
+                    "1) 런던 킹스크로스 역 9와 3/4 승강장에서 호그와트행 급행열차를 탑승합니다.<br/>" +
+                    "2) 호그스미드 역에 도착해 호그와트로 이동합니다.<br/>" +
+                    "3) 호그와트 연회장에서 마법의 분류 모자를 이용한 기숙사 배정식이 있습니다.<br/><br/>" +
+                    "※ 신입생 환영 만찬<br/>" +
+                    "1) 식사 : 구운 쇠고기 및 닭고기, 돼지 및 양 갈비살, 소시지와 베이컨, 스테이크, 삶거나 구운 감자, 감자 튀김, 요크셔 푸딩, 그레이비 소스<br/>" +
+                    "2) 후식 : 각종 맛이 나는 아이스크림, 애플 파이, 당밀 타르트, 초콜릿 에클레어, 잼 도너츠, 트라이플, 쌀 푸딩, 딸기, 젤리<br/><br/>" +
+                    "※ 첫 번째 아침 식사 때 담당 교수, 또는 반장이 수업 시간표 배부 (둘째 주 토요일은 퀴디치팀 선발 시합이 예정되어 있으며, 1학년들은 비행 수업을 받습니다.)");
+
+                setTimeout(function(){
+                    $(".study .left_img").animate({opacity: "0"},400);
+                    $(".study .contents_right .sec3_sub span").removeClass("up");
+                },7200);
+            break;
+
+            case 2:
+                switch (ses_dorm) {
+                    case "sly":
+                        $(".study .left_img").attr("src", "../img/slytherin/harry.png");
+                        $(".study .num_img").attr("src", "../img/slytherin/11.png");
+                        break;
+
+                    case "gry":
+                        $(".study .left_img").attr("src", "../img/gryffindor/harry.png");
+                        $(".study .num_img").attr("src", "../img/gryffindor/11.png");
+                        break;
+
+                    case "rav":
+                        $(".study .left_img").attr("src", "../img/ravenclaw/harry.png");
+                        $(".study .num_img").attr("src", "../img/ravenclaw/11.png");
+                        break;
+
+                    case "huf":
+                        $(".study .left_img").attr("src", "../img/hufflepuff/harry.png");
+                        $(".study .num_img").attr("src", "../img/hufflepuff/11.png");
+                        break;
+                }
+
+                $(".study .left_img").css("opacity","1");
+                $(".study .left_img").css({left: "-160px", bottom: "160px", width: "50%", height: ""});
+                $(".study .left_img").animate({left: "-85px", bottom: "120px"},1000);
+                $(".study #snitch").animate({opacity:"1"},1400);
+                $(".study .contents_right .sec3_sub span").html("<p>퀴디치 경기 시작</p>" +
+                    "퀴디치 팀 선발 시합을 통해 뽑힌 학생들은 각자 기숙사의 대표가 되어 경기에 참가하게 됩니다.<br/>" +
+                    "시즌은 11월 부터 시작되며 퀴디치 팀은 다른 기숙사와 각각 1번씩, 즉 3번의 " +
+                    "경기를 치룹니다. 이때 가장 높은 점수를 얻은 팀이 퀴디치 우승컵을 받습니다.<br/><br/>" +
+                    "호그와트 기숙사 컵에서 우승하면 미국, 불가리아, 영국 등 세계 각국의 일류 팀이 출전하는 국제 월드컵 토너먼트에 참가할 자격을 얻게 됩니다.<br/><br/>" +
+                    "※ 퀴디치 팀 선발은 8~9월 경부터 담당 교수에 의해 진행되며, 매우 엄격하고 공정한 심사를 기준으로 합니다.");
+
+                setTimeout(function(){
+                    $(".study .left_img").animate({opacity: "0"},400);
+                    $(".study .contents_right .sec3_sub span").removeClass("up");
+                    $(".study #snitch").animate({opacity:"0"},400);
+                },7200);
+            break;
+
+            case 3:
+                switch (ses_dorm) {
+                    case "sly":
+                        $(".study .left_img").attr("src", "../img/slytherin/hat.png");
+                        $(".study .num_img").attr("src", "../img/slytherin/12.png");
+                        break;
+
+                    case "gry":
+                        $(".study .left_img").attr("src", "../img/gryffindor/hat.png");
+                        $(".study .num_img").attr("src", "../img/gryffindor/12.png");
+                        break;
+
+                    case "rav":
+                        $(".study .left_img").attr("src", "../img/ravenclaw/hat.png");
+                        $(".study .num_img").attr("src", "../img/ravenclaw/12.png");
+                        break;
+
+                    case "huf":
+                        $(".study .left_img").attr("src", "../img/hufflepuff/hat.png");
+                        $(".study .num_img").attr("src", "../img/hufflepuff/12.png");
+                        break;
+                }
+
+                $(".study .left_img").css("opacity","1");
+                $(".study .left_img").css({left: "-80px", width: "34%", bottom: "150px", height: ""});
+                $(".study .left_img").animate({left: "60px", bottom: "150px"},700);
+                $(".study .contents_right .sec3_sub span").html("<p>가을 학기 마무리 및 크리스마스</p>" +
+                "1) 첫째 주 즈음 크리스마스 휴가 동안 학교에 남아있을 학생들의 명단을 작성합니다. 셋째 주부터 주어지는 휴가 기간에는 연회장과 기숙사 휴게실" +
+                "등이 크리스마스 트리, 눈사람 등의 장식으로 화려하게 꾸며집니다.<br/>" +
+                "2) 12월 중순부터 새 학기 시작 전까지 학생들은 호그와트 급행 열차를 타고 본가에 다녀올 수 있습니다.<br/><br/>" +
+                "※ 크리스마스 만찬<br/>" +
+                "1) 점심 식사 : 칠면조 요리, 크리스마스 푸딩, 크립바그의 마법 크래커<br/>" +
+                "2) 저녁 식사 : 100마리의 살찐 칠면조 구이, 굽거나 삶은 감자, 버터 바른 옥수수, 진한 그레이비 소스와 크레이비 소스, 은시클이 든 크리스마스 푸딩, 초콜릿 케이크, 에그노그, 폭 찹");
+
+                setTimeout(function(){
+                    $(".study .left_img").animate({opacity: "0"},400);
+                    $(".study .contents_right .sec3_sub span").removeClass("up");
+                },7200);
+            break;
+
+            case 4:
+                switch (ses_dorm) {
+                    case "sly":
+                        $(".study .left_img").attr("src", "../img/slytherin/exam.png");
+                        $(".study .num_img").attr("src", "../img/slytherin/06.png");
+                        break;
+
+                    case "gry":
+                        $(".study .left_img").attr("src", "../img/gryffindor/exam.png");
+                        $(".study .num_img").attr("src", "../img/gryffindor/06.png");
+                        break;
+
+                    case "rav":
+                        $(".study .left_img").attr("src", "../img/ravenclaw/exam.png");
+                        $(".study .num_img").attr("src", "../img/ravenclaw/06.png");
+                        break;
+
+                    case "huf":
+                        $(".study .left_img").attr("src", "../img/hufflepuff/exam.png");
+                        $(".study .num_img").attr("src", "../img/hufflepuff/06.png");
+                        break;
+                }
+
+                $(".study .left_img").css("opacity","1");
+                $(".study .left_img").css({left: "-30px", width: "50%", bottom: "80px", height: ""});
+                $(".study .left_img").animate({left: "50px", bottom: "80px"},700);
+                $(".study .contents_right .sec3_sub span").html("<p>시험 기간</p>" +
+                    "1) 한 달 간 O.W.Ls (5학년)와 N.E.W.Ts (7학년) 시험이 치러집니다. 시험 결과는 둘째 주의 여름 방학 기간에 편지로 보내집니다.<br/><br/>" +
+                    "※ 편지는 학생의 부모 혹은 보호자에게 반드시 전해지도록 마법이 걸려 있습니다. 건전하지 못한 방법으로 편지 송달을 막는 경우 그에 합당한 조치가 내려질 것입니다.<br/><br/>" +
+                    "2) 셋째 주에는 종강 연회가 예정되어 있습니다. 1년 간의 학사 일정을 마무리하며, 그동안 가장 많은 점수를 획득한 기숙사에 기숙사 컵(House Cup)을 수여합니다." +
+                    " 이후 모든 학생은 집으로 돌아가 방학을 보냅니다.");
+
+                setTimeout(function(){
+                    $(".study .left_img").animate({opacity: "0"},400);
+                    $(".study .contents_right .sec3_sub span").removeClass("up");
+                },7200);
+            break;
+
+            case 5:
+                switch (ses_dorm) {
+                    case "sly":
+                        $(".study .option_wrap #opt_line1").css("background-color","#bcbcae");
+                        $(".study .left_img").attr("src", "../img/slytherin/hermione.png");
+                        $(".study .num_img").attr("src", "../img/slytherin/08.png");
+                        break;
+
+                    case "gry":
+                        $(".study .option_wrap #opt_line1").css("background-color","#bcaeae");
+                        $(".study .left_img").attr("src", "../img/gryffindor/hermione.png");
+                        $(".study .num_img").attr("src", "../img/gryffindor/08.png");
+                        break;
+
+                    case "rav":
+                        $(".study .option_wrap #opt_line1").css("background-color","#aeb2bc");
+                        $(".study .left_img").attr("src", "../img/ravenclaw/hermione.png");
+                        $(".study .num_img").attr("src", "../img/ravenclaw/08.png");
+                        break;
+
+                    case "huf":
+                        $(".study .option_wrap #opt_line1").css("background-color","#bcb7ae");
+                        $(".study .left_img").attr("src", "../img/hufflepuff/hermione.png");
+                        $(".study .num_img").attr("src", "../img/hufflepuff/08.png");
+                        break;
+                }
+
+                $(".study .left_img").css("opacity","1");
+                $(".study .left_img").css({left: "0px", width: "auto", bottom: "0px", height: "80%"});
+                $(".study .left_img").animate({left: "75px", bottom: "0px"},700);
+                $(".study .contents_right .sec3_sub span").html("<p>여름방학</p>" +
+                    "월말까지 이어지는 여름 방학 기간에는 9월 새 학기를 위한 편지 발송 업무가 진행됩니다. 이는 영국 및 아일랜드에 거주하는 예비 학생에게 입학 허가서를 전달하는 일입니다." +
+                    "재학생의 경우에는 새 학년에 준비해야 할 준비물이 적힌 편지가 배달됩니다.<br/><br/>" +
+                    "※ 준비물<br/>" +
+                    "1) 교복 : 무늬없는 긴 망토 세 벌(검정색), 일상용 뾰족한 모자 한 개(검정색), 보호 장갑" +
+                    " 한 개(용 가죽 또는 유사한 것), 겨울 망토 한 벌(검정색에 은색 단추)<br/><br/>" +
+                    "2) 교과서<br/>" +
+                    "⟪표준 마법서(1학년)⟫, ⟪마법의 역사⟫, ⟪마법 이론⟫, ⟪초보자를 위한 변신술 지침서⟫, ⟪1000가지 마법 약초와 곰팡이⟫," +
+                    " ⟪마법과 마법의 약⟫, ⟪신비한 동물 사전⟫, ⟪어둠의 힘 : 방어법 지침서⟫<br/><br/>" +
+                    "3) 기타 용품 : 마법 지팡이 한 개, 큰 냄비 한 개(양은, 표준 사이즈 2호), 유리 또는" +
+                    " 크리스털 약병 한 개, 망원경 한 개, 놋쇠 저울 한 개, 부엉이나 고양이 등의 동물");
+
+                setTimeout(function(){
+                    $(".study .left_img").animate({opacity: "0"},400);
+                    $(".study .contents_right .sec3_sub span").removeClass("up");
+                },7200);
+            break;
+        }
+    }
+
+
+    $(".study .class_table .table_list").hover(function(){
+        console.log("ses_spell_second : " + ses_spell);
+
+        if(ses_spell == "녹스"){
+            $(this).css("background-color","#ebebeb");
+        }else{
+            switch (ses_dorm) {
+                case "sly":
+                    $(this).css("background-color","#e4e4df");
+                    break;
+                case "gry":
+                    $(this).css("background-color","#e4dfdf");
+                    break;
+                case "rav":
+                    $(this).css("background-color","#dfe0e4");
+                    break;
+                case "huf":
+                    $(this).css("background-color","#e4e2df");
+                    break;
+            }
+        }
+    }, function(){
+        $(this).css("background-color","#fff");
+    });
+
+
+
+    /*class apply*/
+    function class_apply(class_num){
+        $(".alert_container span:first-child").text("좌석 선택 및 수강신청");
+
+        switch(class_num){
+            case 1 :
+                $(".study .table_content .table_list td:nth-child(1)").text("변신술");
+                $(".study .table_content .table_list td:nth-child(2)").text("미네르바 맥고나걸");
+                $(".study .table_content .table_list td:nth-child(3)").text("4학점");
+                $(".study .table_content .table_list td:nth-child(4)").html("<p>WED</p> 13:00 - 16:00");
+                $(".study .table_content .table_list td:nth-child(5)").text("4층 5번 강의실");
+            break;
+
+            case 2 :
+                $(".study .table_content .table_list td:nth-child(1)").text("역사학");
+                $(".study .table_content .table_list td:nth-child(2)").text("커스버트 빈스");
+                $(".study .table_content .table_list td:nth-child(3)").text("2학점");
+                $(".study .table_content .table_list td:nth-child(4)").html("<p>FRI</p> 10:00 - 12:00");
+                $(".study .table_content .table_list td:nth-child(5)").text("2층 3번 강의실");
+            break;
+
+            default:
+                console.log("no result");
+        }
+
+        $(".alert_bg").css("display", "block");
+        $(".study .table_content").css("display", "block");
+        $(".alert_container").css("display", "block").css({width: "50%", height:"fit-content"});
+        $("body").css("overflow-y", "hidden");
+    }
+
+
+
+    /*seat choice*/
+    var ori_color;
+    var result_color;
+
+    $(".study .seat_line li div").click(function(){
+        /*console.log("ori_color " + ori_color);
+        console.log("result_color " + result_color);
+        console.log("class " + $(this).attr("class"));*/
+        console.log($(".study .chosen_"+ses_dorm).length);
+        var this_asset = $(this);
+
+        if(!this_asset.hasClass("check") && !$(this).parents("li").hasClass("seat_active")){ // 선택된 좌석이 아닐 떄
+            console.log("선택된 좌석이 아닐 때");
+            if($(".study .chosen_"+ses_dorm).length == 12){
+                this_asset.addClass("chosen_"+ses_dorm);
+                this_asset.addClass("check");
+                $(".study .people_num").text("27명");
+            }else if($(".study .chosen_"+ses_dorm).length > 12){
+                $(".study .check").removeClass("chosen_"+ses_dorm);
+                $(".study .check").removeClass("check");
+                this_asset.addClass("chosen_"+ses_dorm);
+                this_asset.addClass("check");
+                $(".study .people_num").text("27명");
+            }
+        }else if(this_asset.hasClass("check")){ // 선택된 좌석일 때
+            console.log("선택된 좌석일 때");
+            this_asset.removeClass("chosen_"+ses_dorm);
+            this_asset.removeClass("check");
+            /*var this_asset = $(this);
+            if(this_asset.hasClass("chosen_"+ses_dorm)){
+                this_asset.removeClass("chosen_"+ses_dorm);
+            }*/
+            $(".study .people_num").text("28명");
+        }
+    });
+
+    $(".study .seat_line li div").hover(function(){
+        ori_color = $(this).css("background-color");
+        // 선택된 좌석이 아닐 때 (sly / gry / rav / huf)
+        if(ori_color != "rgb(95, 95, 84)" && ori_color != "rgb(107, 85, 85)" && ori_color != "rgb(81, 86, 101)"
+            && ori_color != "rgb(99, 93, 86)" && !$(this).parents("li").hasClass("seat_active")){
+            switch (ses_dorm) {
+                case "sly":
+                    $(this).css("background-color","rgb(95, 95, 84)");
+                    result_color = "rgb(95, 95, 84)";
+                break;
+
+                case "gry":
+                    $(this).css("background-color","rgb(107, 85, 85)");
+                    result_color = "rgb(107, 85, 85)";
+                break;
+
+                case "rav":
+                    $(this).css("background-color","rgb(81, 86, 101)");
+                    result_color = "rgb(81, 86, 101)";
+                break;
+
+                case "huf":
+                    $(this).css("background-color","rgb(99, 93, 86)");
+                    result_color = "rgb(99, 93, 86)";
+                break;
+            }
+        }
+    }, function(){
+        if(!$(this).parents("li").hasClass("seat_active")) {
+            $(this).css("background-color","rgb(245, 245, 245)");
+        }
+    });
+
+
+
+    /*access*/
+    function access_granted() { //granted
+        $(".study .table_content").css("display","none");
+        $(".study .alert_content").css("display","block");
+        $(".study .alert_container").css("height","50%").css("width","");
+        $(".study .alert_container span").text("신청하기 완료");
+        $(".study .alert_content p").text("신청이 완료되었습니다");
+        $(".study .alert_content img").attr("src", "../img/alert_check.png");
+        $(".study .alert_bg").css("display", "block");
+        $(".study .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+    }
+
+    $(".alert_container img").click(function () { //alert close
+        $(".study .alert_container").css({height:"", width:""});
+        $(".study .table_content").css("display","block");
+        $(".study .alert_content").css("display","none");
+        $(".study .table_content span").html("※ 해당 과목의 잔여 신청 가능 인원은 <p class=\"people_num\">28명</p>입니다.<br/>" +
+            "※ 빈 좌석을 선택한 뒤 '신청하기' 버튼을 누르면 수강 신청이 완료됩니다.<br/>※ 좌석 선택을 취소하려면 선택하신 좌석을 다시 클릭해주세요.");
+        $(".alert_bg").css("display", "none");
+        $(".alert_container").css("display", "none");
+        $("body").css("overflow-y", "");
+    });
+
+
+
+    /*presentation*/
+    $(".study .option_wrap a, .study .pg4_bg a").hover(function(){ //hover
+        $(".study .option_wrap a, .study .pg4_bg a").css("color","#333");
+        $(".study .option_wrap a img, .study .pg4_bg a img").attr("src","../img/btn_arr_b.svg");
+        $(".study .gif_wrap").css("animation","up 0.6s forwards");
+    }, function(){
+        $(".study .option_wrap a, .study .pg4_bg a").css("color","#777");
+        $(".study .option_wrap a img, .study .pg4_bg a img").attr("src","../img/btn_arr_g.svg");
+        $(".study .gif_wrap").css({opacity: "0", transform: "translateY(20%)"});
+        $(".study .gif_wrap").css("animation","");
+    });
+
+
+
+    /*menu separate(for study navi)*/
+    $(".study .nav_main li").click(function(){
+        var nav_parent = $(this).parent("ul").attr("class");
+        var nav_this = $(this).text();
+        $(".study .table_content").css("display","none");
+        $(".study .alert_content").css("display","block");
+
+        if(ses_id == null){
+            if($(this).attr("id") == "login"){
+                document.location.href="./login.html";
+            }else{
+                $(".alert_container span").text("입장 불가");
+                $(".alert_content img").attr("src","../img/alert_x.png");
+                $(".alert_container p").html("해당 페이지에 입장하기 해서는 먼저 로그인하셔야 합니다.");
+                $(".alert_bg").css("display","block");
+                $(".alert_container").css("display","block");
+                $("body").css("overflow-y","hidden");
+            }
+        }else{
+            var this_text = $(this).text();
+            if(nav_parent.indexOf("school") != -1){
+                window.location.href="./school.html?submenu=" + this_text;
+            }else if(nav_parent.indexOf("study") != -1){
+                window.location.href="./study.html?submenu=" + this_text;
+            }else if(nav_parent.indexOf("library") != -1){
+                window.location.href="./library.html?submenu=" + this_text;
+            }else if(nav_this == "오시는 길"){
+                window.location.href = "./map.html";
+            }else if($(this).attr("id") == "login"){
+                $(".alert_container span").text("입장 불가");
+                $(".alert_content img").attr("src","../img/alert_x.png");
+                $(".alert_container p").html("해당 페이지에 입장하기 해서는 먼저 &nbsp;" +
+                    "<a id='alert_a' onclick='logout()' style='color: #4D65A7; font-family: square_r; font-weight: 600'>로그아웃</a> &nbsp;하셔야 합니다.");
+                $(".alert_bg").css("display","block");
+                $(".alert_container").css("display","block");
+                $("body").css("overflow-y","hidden");
+            }
+        }
+    });
+
+
+
+    /*go to library*/
+    $(".study .page_wrap a").click(function(){
+        document.location.href="./library.html";
+    });
+</script>
+</html>

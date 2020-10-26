@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+     
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+    
+<body class="library clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    
+    <!--loading bg-->
+    <div class="bg_down"></div>
+    <div class="bg_black2"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--alert-->
+    <div class="alert_container col-d-4">
+        <span>금지도서 열람 제한</span>
+        <i class="las la-home"></i>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="alert_content">
+            <img src="../img/alert_lock.png" alt="lock image" id="title_img"/>
+            <p>금지 도서를 열람하시려면<br/>알맞은 주문을 입력해주세요</p>
+            <a onclick="input_change()">주문 입력하기<img src="../img/btn_arr_g.svg" alt="spell typing require"/></a>
+            <input type="text" name="spell_chk" placeholder="주문 입력 후 엔터(Enter)를 눌러주세요" id="spell_chk">
+        </div>
+    </div>
+    <div class="alert_bg"></div>
+
+
+    <!--page1-->
+    <div class="page1 clearfix col-d-12">
+        <section class="sec1 clearfix">
+            <div class="col-d-6 title">
+                <p>OUR PROUD</p>
+                <span>GREAT LIBRARY</span>
+            </div>
+            <div class="cont_wrap">
+                <span>NEW</span>
+                <span>POPULAR</span>
+                <span>BOOK COMMENTS</span>
+                <span>FORBIDDEN</span>
+                <!--<span><i class="las la-search"></i></span>-->
+            </div>
+        </section>
+    </div>
+        
+        
+    <!--page2-->
+    <div class="page2 clearfix col-d-12">
+        <section class="sec2 clearfix col-d-12">
+            <span id="sec2_title">NEW</span>
+            <p class="sec2_subtitle col-d-2">호그와트의 도서관은 세계에서 가장<br/>신속한 책 보급률을 자랑합니다</p>
+            <div class="col-d-6 book_desc">
+                <div class="title_container">
+                    <h1>ORMESHADOW</h1>
+                    <p>PRITA SHARMA</p>
+                </div>
+                <div class="book_icon">
+                    <i class="las la-thumbs-up"></i>
+                    <span>19,210</span>
+                    <i class="las la-comment"></i>
+                    <span>2,000</span>
+                </div>
+            </div>
+            <div class="col-d-6 main_book">
+                <!--book cover img-->
+                <img src="../img/library/ormeshadow.png" alt="book cover" class="main_book_cover cover_active"/>
+                <img src="../img/library/fever.png" alt="book cover" class="main_book_cover"/>
+                <img src="../img/library/berta.png" alt="book cover" class="main_book_cover"/>
+                <img src="../img/library/contents.png" alt="book cover" class="main_book_cover"/>
+                <img src="../img/library/magic.png" alt="book cover" class="main_book_cover"/>
+                <img src="../img/library/peter.png" alt="book cover" class="main_book_cover"/>
+
+                <div class="num_container clearfix">
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line line_active"></div>
+                        <p class="num_line_text text_active">01</p>
+                    </div>
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line"></div>
+                        <p class="num_line_text">02</p>
+                    </div>
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line"></div>
+                        <p class="num_line_text">03</p>
+                    </div>
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line"></div>
+                        <p class="num_line_text">04</p>
+                    </div>
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line"></div>
+                        <p class="num_line_text">05</p>
+                    </div>
+                    <div class="col-d-2 num_wrap">
+                        <div class="num_line"></div>
+                        <p class="num_line_text">06</p>
+                    </div>
+                </div>
+            </div>
+            <div class="arr_container col-d-12">
+                <img class="arr_btns" src="../img/btn_arr_gr_l.svg" alt="prev button" id="prev_arr" data-lang="1"/>
+                <img class="arr_btns" src="../img/btn_arr_gr_r.svg" alt="next button" id="next_arr" data-lang="1"/>
+                <div class="book_container clearfix col-d-12">
+                    <img src="../img/slytherin/youmay.png" alt="you may also like" id="youmay"/>
+                    <div class="book_open">
+                        <img src="../img/btn_tri_l.svg" alt="book shelf open" id="open_arr"/>
+                        <div class="book_li_container">
+                            <span id="book_blank"></span>
+                            <li>
+                                <img src="../img/library/like_dict.png/" alt="like book list">
+                                <div class="text_container">
+                                    <p class="like_title">신비한 동물 사전</p><br/>
+                                    <p class="like_writer">뉴트 스캐맨더</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="../img/library/like_magic.png/" alt="like book list">
+                                <div class="text_container">
+                                    <p class="like_title">어두운 시대를 위한 밝은 마법</p><br/>
+                                    <p class="like_writer">리사 마리 베실</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="../img/library/like_quidditch.png/" alt="like book list">
+                                <div class="text_container">
+                                    <p class="like_title">퀴디치의 역사</p><br/>
+                                    <p class="like_writer">케닐워디 위스프</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="../img/library/like_beedle.png/" alt="like book list">
+                                <div class="text_container">
+                                    <p class="like_title">음유시인 비들 이야기</p><br/>
+                                    <p class="like_writer">헤르미온느 그레인저</p>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!--page3-->
+    <!--<div class="page3 clearfix col-d-12">-->
+    <div class="book_default">
+        <div class="pg3_right clearfix col-d-9" style="height: 128px; position: relative;">
+            <span>POPULAR</span>
+        </div>
+        <div class="pg3_right clearfix col-d-9" style="height: fit-content;">
+            <section class="col-d-12 clearfix book_list"> <!--1st line-->
+                <div class="book col-d-3">
+                    <img src="../img/library/luminaries.png" alt="book cover"/>
+                    <p class="book_title">전문가</p>
+                    <p class="book_sub">일레노어 캐턴</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/fever.png" alt="book cover"/>
+                    <p class="book_title">열병</p>
+                    <p class="book_sub">자비에르 마리아스</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/peter.png" alt="book cover"/>
+                    <p class="book_title">피터와 늑대</p>
+                    <p class="book_sub">세르게이 프로코피예프</p>
+                </div>
+            </section>
+            <section class="col-d-12 clearfix book_list"> <!--2nd line-->
+                <div class="book col-d-3">
+                    <img src="../img/library/contents.png" alt="book cover"/>
+                    <p class="book_title">콘텐츠의 미래</p>
+                    <p class="book_sub">프랭크 로즈</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/berta.png" alt="book cover"/>
+                    <p class="book_title">베르타 이스라</p>
+                    <p class="book_sub">자비에르 마리아스</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/magic.png" alt="book cover"/>
+                    <p class="book_title">진짜 마법</p>
+                    <p class="book_sub">딘 라딘</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="book_forbidden">
+        <div class="pg3_right clearfix col-d-9" style="height: 128px; position: relative;">
+            <span>FORBIDDEN</span>
+            <p class="for_sub"><i class="las la-info-circle"></i>금지도서 열람은 엄격히 제한 및 관리되고 있습니다</p>
+        </div>
+        <div class="pg3_right clearfix col-d-9" style="height: fit-content;">
+            <section class="col-d-12 clearfix book_list"> <!--1st line-->
+                <div class="book col-d-3">
+                    <img src="../img/library/for_darkest.png" alt="book cover"/>
+                    <p class="book_title">어둠의 마법의 비밀</p>
+                    <p class="book_sub">오울 불록</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/for_horowitz.png" alt="book cover"/>
+                    <p class="book_title">까치 살인</p>
+                    <p class="book_sub">앤서니 호로비츠</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/for_dove.png" alt="book cover"/>
+                    <p class="book_title">뱀과 비둘기</p>
+                    <p class="book_sub">셜비 마후린</p>
+                </div>
+            </section>
+            <section class="col-d-12 clearfix book_list"> <!--2nd line-->
+                <div class="book col-d-3">
+                    <img src="../img/library/for_savior.png" alt="book cover"/>
+                    <p class="book_title">구세주의 챔피언</p>
+                    <p class="book_sub">제나 모레시</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/for_magos.png" alt="book cover"/>
+                    <p class="book_title">최후의 마법사</p>
+                    <p class="book_sub">리사 맥스웰</p>
+                </div>
+                <div class="book col-d-3">
+                    <img src="../img/library/for_witchcraft.png" alt="book cover"/>
+                    <p class="book_title">종교, 마법, 요술에 대한 인류학</p>
+                    <p class="book_sub">레베카 L. 스테인</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--</div>-->
+
+
+    <!--fullbanner-->
+    <section class="fullbanner col-d-12">
+        <div class="banner_title">
+            <span>It is our choice that show what<br/>we truly are, far more than our abilities.</span>
+            <p>ALBUS DUMBLEDORE</p>
+        </div>
+    </section>
+
+
+    <!--page4-->
+    <div class="page4 clearfix col-d-12">
+        <div class="pg4_bg col-d-2">
+            <div class="page_wrap">
+                <a>오시는 길로 이동<img src="../img/btn_arr_g.svg" alt="go to study page"/></a>
+                <div class="gif_wrap">
+                    <div class="shape_rectangle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="pg3_right col-d-9" style="height: 158px;" id="pg4_title">
+            <span style="margin: 0;">BOOK<br/>COMMENTS</span>
+            <img src="../img/owl.png" alt="owl" id="owl"/>
+        </div>
+        <section class="news_list col-d-9">
+            <hr/>
+            <div class="news">
+                <span>66</span>
+                <span>이 책에서 시험 문제가 네 개나 나왔어! N.E.W.T.s 시험 보는 사람들한테 추천해.</span>
+                <span>2019.09.21</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>65</span>
+                <span>이 책을 끝으로 호그와트 도서관에 있는 책은 전부 완독했어. 완벽해!</span>
+                <span>2019.09.15</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>64</span>
+                <span>시간 때우기 딱 좋은 책. (P.S. 도서부 신입생이 너무 귀여워!)</span>
+                <span>2019.08.30</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>63</span>
+                <span>다음 달 5일부터 도서관 반납 기한이 이틀 단축된대! 다들 주의해.</span>
+                <span>2019.08.08</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>62</span>
+                <span>오랜만에 좋은 책을 발견했는데, 이것과 비슷한 책 추천해줄 사람?</span>
+                <span>2019.08.01</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>61</span>
+                <span>뭔가 용두사미 같은 책이야. 흥미진진하다가 갑자기 허무하게 끝나버려.</span>
+                <span>2019.07.30</span>
+            </div>
+            <hr/>
+            <div class="news">
+                <span>60</span>
+                <span>이딴 것도 책이라고! 이걸 읽는 매 순간이 낭비야.</span>
+                <span>2019.07.22</span>
+            </div>
+            <hr/>
+            <div class="pagination">
+                <img src="../img/btn_arr_g_l.svg" alt="pagination previous button"/>
+                <span class="pag_active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <img src="../img/btn_arr_g_r.svg" alt="pagination next button"/>
+            </div>
+        </section>
+    </div>
+    
+    
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    var scrolltop = window.scrollY;
+    var windowheight = $(window).height();
+
+    $(document).ready(function(){
+        /*parameter using*/
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var submenu = getParameterByName("submenu");
+        switch(submenu){
+            case "인기작":
+                var scroll_position = $(".sec1").outerHeight() * 2;
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+            case "서평":
+                var scroll_position = $(".sec1").outerHeight() * 3 + 390 + "px";
+                $("html").stop().animate({scrollTop : scroll_position}, 600);
+            break;
+        }
+
+
+
+        /*loading*/
+        $(".bg_down").animate({height: "100%", top: "0%"}, 1000, "easeInCubic", function () {
+            $(".bg_black2").animate({height: "0%"}, 600, "easeInCubic");
+            $(".bg_down").animate({top: "100%"}, 600, "easeInCubic");
+            setTimeout(function () {
+                $("#header").animate({top: "0px"}, 600);
+                $("#header").css("z-index", "11");
+                $(".bg_down").css("display", "none");
+            }, 900);
+            setTimeout(function (){
+                $(".library .title p").css("animation","up 0.7s forwards");
+                $(".library .title span").css("animation","up 0.7s 0.3s forwards");
+                $(".library .cont_wrap span:nth-child(1)").css("animation","up 0.7s 0.6s forwards");
+                $(".library .cont_wrap span:nth-child(2)").css("animation","up 0.7s 0.9s forwards");
+                $(".library .cont_wrap span:nth-child(3)").css("animation","up 0.7s 1.2s forwards");
+                $(".library .cont_wrap span:nth-child(4)").css("animation","up 0.7s 1.5s forwards");
+                // $(".library .cont_wrap span:nth-child(5)").css("animation","up 0.7s 1.8s forwards");
+            }, 1200);
+        });
+
+
+
+        /*moving background img*/
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".sec1").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $(".sec1").css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+
+
+
+        $(window).scroll(function(){
+            scrolltop = window.scrollY;
+            if(scrolltop >= windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+                $("#header img:nth-child(1)").css("display","none");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+                $(".header_menu div").css("background-color","#333");
+            }else if(scrolltop < windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_w.png");
+                $("#header img:nth-child(1)").css("display","block");
+                $(".header_menu div").css("background-color","#fff");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_w.png");
+            }
+        });
+
+
+
+        /*spell check*/
+        var result_text;
+        $("#spell_chk").keydown(function(key) {
+            if (key.keyCode == 13) {
+                result_text = $("#spell_chk").val();
+                spell_chk(result_text);
+            }
+        });
+
+        function spell_chk(t){
+            if(t == "알로호모라"){
+                access_granted();
+            }else{
+                access_denied();
+            }
+        }
+    });
+
+
+
+    /*scroll(for click)*/
+    $(".library .cont_wrap span:first-child").click(function(){
+        var scroll_position = $(".sec1").outerHeight();
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".library .cont_wrap span:nth-child(2)").click(function(){
+        var scroll_position = $(".sec1").outerHeight() * 2;
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".library .cont_wrap span:nth-child(3)").click(function(){
+        var scroll_position = $(".page4").offset().top;
+        $("html").stop().animate({scrollTop : scroll_position}, 600);
+    });
+
+    $(".library .cont_wrap span:nth-child(4)").click(function(){
+        access_request();
+    });
+
+    /*$(".library .cont_wrap span:nth-child(5)").click(function(){
+        //search input 출력
+    });*/
+
+
+
+    /*menu separate(for library navi)*/
+    $(".library .nav_main li").click(function(){
+        var nav_parent = $(this).parent("ul").attr("class");
+        var nav_this = $(this).text();
+        $(".library .alert_content a, .library .alert_content input").css("display","none");
+
+        if(ses_id == null){
+            if($(this).attr("id") == "login"){
+                document.location.href="./login.html";
+            }else{
+                $(".alert_container span").text("입장 불가");
+                $(".alert_content img").attr("src","../img/alert_x.png");
+                $(".alert_container p").html("해당 페이지에 입장하기 해서는 먼저 로그인하셔야 합니다.");
+                $(".alert_bg").css("display","block");
+                $(".alert_container").css("display","block");
+                $("body").css("overflow-y","hidden");
+            }
+        }else{
+            var this_text = $(this).text();
+            if(nav_parent.indexOf("school") != -1){
+                window.location.href="./school.html?submenu=" + this_text;
+            }else if(nav_parent.indexOf("study") != -1){
+                window.location.href="./study.html?submenu=" + this_text;
+            }else if(nav_parent.indexOf("library") != -1){
+                window.location.href="./library.html?submenu=" + this_text;
+            }else if(nav_this == "오시는 길"){
+                window.location.href = "./map.html";
+            }else if($(this).attr("id") == "login"){
+                $(".alert_container span").text("입장 불가");
+                $(".alert_content img").attr("src","../img/alert_x.png");
+                $(".alert_container p").html("해당 페이지에 입장하기 해서는 먼저 &nbsp;" +
+                    "<a id='alert_a' onclick='logout()' style='color: #4D65A7; font-family: square_r; font-weight: 600'>로그아웃</a> &nbsp;하셔야 합니다.");
+                $(".alert_bg").css("display","block");
+                $(".alert_container").css("display","block");
+                $("body").css("overflow-y","hidden");
+            }
+        }
+    });
+
+
+
+    /*presentation*/
+    $(".library .option_wrap a, .library .pg4_bg a").hover(function(){ //hover
+        $(".library .option_wrap a, .study .pg4_bg a").css("color","#333");
+        $(".library .option_wrap a img, .study .pg4_bg a img").attr("src","../img/btn_arr_b.svg");
+        $(".library .gif_wrap").css("animation","up 0.6s forwards");
+    }, function(){
+        $(".library .option_wrap a, .study .pg4_bg a").css("color","#777");
+        $(".library .option_wrap a img, .study .pg4_bg a img").attr("src","../img/btn_arr_g.svg");
+        $(".library .gif_wrap").css({opacity: "0", transform: "translateY(20%)"});
+        $(".library .gif_wrap").css("animation","");
+    });
+
+
+
+    /*book slide*/
+    $(".library #next_arr, .library #prev_arr").click(function(){
+        var arrId = $(this).attr("id");
+        var dataId;
+        if(arrId == "next_arr"){
+            dataId = $(".library #next_arr").attr("data-lang");
+            dataId = Number(dataId)+1;
+            $(".library #next_arr, .library #prev_arr").attr("data-lang",dataId);
+            book_slide(dataId);
+        }else{
+            dataId = $(".library #prev_arr").attr("data-lang");
+            dataId = Number(dataId)-1;
+            $(".library #next_arr, .library #prev_arr").attr("data-lang",dataId);
+            book_slide(dataId);
+        }
+    });
+
+    function book_slide(d){
+        if(d == 1){
+            $(".library #prev_arr").css("visibility","hidden");
+        }else if(d == 6){
+            $(".library #next_arr").css("visibility","hidden");
+        }else{
+            $(".library #prev_arr, .library #next_arr").css("visibility","visible");
+        }
+
+        switch(d){
+            case 1:
+                $(".library .book_desc h1").text("ORMESHADOW");
+                $(".library .book_desc p").text("PRITA SHARMA");
+                $(".library .book_icon span:nth-child(2)").text("19,210");
+                $(".library .book_icon span:last-child").text("2,000");
+            break;
+            case 2:
+                $(".library .book_desc h1").text("THE INFATUATIONS");
+                $(".library .book_desc p").text("JAVIER MARIAS");
+                $(".library .book_icon span:nth-child(2)").text("15,000");
+                $(".library .book_icon span:last-child").text("1,940");
+            break;
+            case 3:
+                $(".library .book_desc h1").text("BERTA ISLA");
+                $(".library .book_desc p").text("JAVIER MARIAS");
+                $(".library .book_icon span:nth-child(2)").text("13,320");
+                $(".library .book_icon span:last-child").text("1,200");
+            break;
+            case 4:
+                $(".library .book_desc h1").html("THE ART OF <br/> IMMERSION");
+                $(".library .book_desc p").text("FRANK ROSE");
+                $(".library .book_icon span:nth-child(2)").text("10,000");
+                $(".library .book_icon span:last-child").text("960");
+            break;
+            case 5:
+                $(".library .book_desc h1").text("REAL MAGIC");
+                $(".library .book_desc p").text("DEAN LADIN, PhD");
+                $(".library .book_icon span:nth-child(2)").text("9,600");
+                $(".library .book_icon span:last-child").text("599");
+            break;
+            case 6:
+                $(".library .book_desc h1").html("PETER AND <br/> THE WOLF");
+                $(".library .book_desc p").text("SERGEI PROKOFIEV");
+                $(".library .book_icon span:nth-child(2)").text("8,276");
+                $(".library .book_icon span:last-child").text("403");
+            break;
+        }
+        $(".library .num_wrap p").removeClass("text_active");
+        $(".library .num_wrap:nth-child("+d+") p").addClass("text_active");
+        $(".library .main_book_cover").removeClass("cover_active");
+        $(".library .main_book_cover:nth-child("+d+")").addClass("cover_active");
+    }
+
+
+
+    /*book open*/
+    $(".library .book_open").hover(function(){
+        $(".library .book_open").css("width","85px");
+        $(".library .book_open #open_arr").css("margin","0px 26px 0px 36px");
+    }, function(){
+        $(".library .book_open").css("width","75px");
+        $(".library .book_open #open_arr").css("margin","0px 26px 0px 26px");
+    });
+
+    $(".library #open_arr").click(function(){
+        if($(".library .book_open").hasClass("open_active")){
+            $(".library .book_open li").css("animation","down 0.3s forwards");
+            $(".library .book_open #open_arr").attr("src","../img/btn_tri_l.svg");
+            setTimeout(function(){
+                $(".library .book_open").removeClass("open_active");
+            },500);
+        }else{
+            $(".library .book_open").addClass("open_active");
+            $(".library .book_open #open_arr").attr("src","../img/btn_tri_r.svg");
+            $(".library .book_open li").css("animation","up 0.5s 1s forwards");
+        }
+    });
+
+
+
+    /*access*/
+    function access_request(){ //request
+        $(".library .alert_content a").css("display","block");
+        $(".library .alert_bg").css("display", "block");
+        $(".library .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+    }
+
+    function access_granted() { //granted
+        $(".library .alert_container span").text("금지도서 열람 승인");
+        $(".library .alert_container p").text("금지도서 열람이 승인되었습니다");
+        $(".library #title_img").attr("src", "../img/alert_check.png");
+        $(".library .alert_content a, .library .alert_content input").css("display","none");
+        $(".library .page2, .library .page4, .library .fullbanner, .library .book_default").css("display","none");
+        $(".library .book_forbidden").css("display","block");
+        $(".library footer").css("margin","100px 0px 0px 0px");
+        $(".library .alert_bg").css("display", "block");
+        $(".school .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+
+        $(".library .alert_content input").val("");
+    }
+
+    function access_denied() { //denied
+        $(".library #title_img").attr("src", "../img/alert_x.png");
+        $(".library .alert_container span").text("열람 불가");
+        $(".library .alert_container p").html("주문을 외웠지만 아무 반응도 일어나지 않았습니다");
+        $(".library .alert_bg").css("display", "block");
+        $(".library .alert_container").css("display", "block");
+        $("body").css("overflow-y", "hidden");
+    }
+
+    $(".library #alert_close").click(function () { //alert close
+        $(".library #title_img").attr("src","../img/alert_lock.png");
+        $(".library .alert_content span").text("금지도서 열람 제한");
+        $(".library .alert_content p").html("금지 도서를 열람하시려면<br/>알맞은 주문을 입력해주세요");
+
+        $(".library .alert_content a").css("display","block");
+        $(".library .alert_content input").css("display","none");
+        $(".alert_bg").css("display", "none");
+        $(".alert_container").css("display", "none");
+        $("body").css("overflow-y", "");
+    });
+
+
+
+    /*list hover*/
+    $(".library .news span").hover(function(){ // news
+        $(this).siblings("span").css({color: "#333"});
+        $(this).css({color: "#333", fontWeight: "600"});
+    }, function(){
+        $(this).siblings("span").css({color: "#777"});
+        $(this).css({color: "#777", fontWeight: ""});
+    });
+
+
+
+    function input_change(){
+        $(".library .alert_content a").css("display","none");
+        $(".library .alert_content input").css("display","block");
+    }
+
+
+
+    /*alert spell hover*/
+    $(".library .alert_container a").hover(function(){
+        $(".library .alert_container a").css("color","#333");
+        $(".library .alert_container a img").attr("src","../img/btn_arr_b.svg");
+    }, function(){
+        $(".library .alert_container a").css("color","#777");
+        $(".library .alert_container a img").attr("src","../img/btn_arr_g.svg");
+    });
+
+
+
+    /*go to board*/
+    $(".library .main_book_cover, .library .book img, .library .news").click(function(){
+        document.location.href="./book_board.html";
+    });
+
+
+
+    /*go to map*/
+    $(".library .page_wrap a").click(function(){
+        document.location.href="./map.html";
+    });
+</script>
+</html>

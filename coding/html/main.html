@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="favicon.ico"/>
+     
+    <!--web font-->
+    <link rel="stylesheet" type="text/css" href="../css/Helvetica.woff"/>
+    <link rel="stylesheet" type="text/css" href="../css/NanumSquareRegular.woff"/>
+
+    <!--css-->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!--js-->
+    <script src="../js/jquery.min.js"></script><!--jquery-->
+    <script src="../js/prefixfree.min.js"></script><!--벤더프리픽스(브라우저별 css 호환)-->
+    <script src="../js/jquery.easing.1.3.js"></script><!--animate easing-->
+    <link rel = "stylesheet" href = "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" ><!--icon font-->
+</head>
+    
+<body class="main clearfix">
+    <!--bgm-->
+    <audio id="mybgm" autoplay loop>
+        <source src="../bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    
+    <!--loading bg-->
+    <div class="wrapper">
+        <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+        y="0px" viewBox="0 0 485 533" style="enable-background:new 0 0 485 533;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+        </style>
+            <path class="st0" d="M96.5,28.5l-6-11c0,0,11-23,36-10s46,52,65,54s29,0,29,0l22,23l22-23c0,0,10,2,29,0s40-41,65-54s36,10,36,10
+                l-4,11"/>
+            <path class="st0" d="M250.5,178.3V93.5l19-19c37,12,86-45,99-50s22,4,22,4l40,40"/>
+            <path class="st0" d="M305,256.5h87.5c0,0,0,3,1,5"/>
+            <path class="st0" d="M434.5,379.5l26-32c0,0-11.8-8.5-28-26"/>
+            <path class="st0" d="M375.5,402.5c3.7-5.2,5.2-7.6,8-13l26,22l11-14"/>
+            <path class="st0" d="M332.5,442.5c11-6.2,19.1-12,27-20"/>
+            <path class="st0" d="M297.5,456.5c1-0.3,3-0.7,4-1c5-1.5,10.4-4.1,15-6"/>
+            <path class="st0" d="M250.5,317v174.5c0,0,9.9-20.4,42-33"/>
+            <path class="st0" d="M392.5,163c0,0,23,25.5,45,0.5l-13-16"/>
+            <path class="st0" d="M418.5,174.5c0,0-21-12,6-27c0,0,26-4,39-23c0,0,13.3-14.3,4-39c-9-24-37-17-37-17s-53,10-53,104"/>
+            <path class="st0" d="M188.5,72.5c10.9,4.5,18.9,5.3,29,2l19,19v85"/>
+            <path class="st0" d="M183.5,242.5h-87c0,0,51-119-40-174l40-40c0,0,9-9,22-4c7.9,3,27.2,23.7,51,38"/>
+            <path class="st0" d="M53.5,321.5c-15.1,15.9-27,26-27,26l51,64l26-22c14,27,42,54,82,66s51,36,51,36v-43.2"/>
+            <path class="st0" d="M183.5,256.5h-89c-2.8,19.1-14.8,35.9-30,53"/>
+            <path class="st0" d="M437.5,403.5c10.8-15.7,25.5-34.1,48-57c0,0-72-63-82-109s-29-110,30-150"/>
+            <path class="st0" d="M53.5,87.5c59,40,40,104,30,150s-82,109-82,109c53,54,69,93,69,93l26-24c15,28,60,43,101,64s39,53,39,53h14
+                c0,0-2-32,39-53s86-36,101-64l26,24c0,0,3.1-9.9,15-28"/>
+            <path class="st0" d="M94.5,163c0,0-23,25.5-45,0.5l13-16"/>
+            <path class="st0" d="M68.5,174.5c0,0,21-12-6-27c0,0-26-4-39-23c0,0-13.3-14.3-4-39c9-24,37-17,37-17"/>
+            <path class="st0" d="M267.5,175.5c0-17,8-28,22-39s49-11,57-22s1-29-15-27s-13,9-21,21s-24,16-37,17s-12-7-12-7c0-7,7-16,17-28
+                s26-11,26-11c11-2,13-11,23-13s36-1,43,21s-1,35-14,45s-37,18-53,23c0,0-9.2,3.6-13.1,14.3"/>
+            <circle class="st0" cx="291.5" cy="97.5" r="2"/>
+            <path class="st0" d="M263.3,123.2c0,0-10.8,8.3-4.8,28.3l5,4"/>
+            <line class="st0" x1="255.5" y1="155.5" x2="258.5" y2="151.5"/>
+            <path class="st0" d="M304.5,264c0-21.1,0-46,0-56.5c0-17,14-22,14-22l-16-20c0,0-32,13-58,13h-1c-26,0-58-13-58-13l-16,20
+                c0,0,14,5,14,22s0,84,0,84s-1,10-14,20l16,19c0,0,21-14,59-14l0,0c38,0,58,14,58,14l16-19c-13-10-14-20-14-20v-8.3"/>
+            <line class="st0" x1="201.5" y1="244" x2="201.5" y2="192.6"/>
+            <path class="st0" d="M232.5,187.5c0,0-6-1-12,3c-6,4-12,4-12,4l0,0c0,0-5,0-11-4s-12-3-12-3"/>
+            <line class="st0" x1="216.5" y1="238" x2="216.5" y2="192.6"/>
+            <line class="st0" x1="201.5" y1="302" x2="201.5" y2="252"/>
+            <line class="st0" x1="216.5" y1="302" x2="216.5" y2="247"/>
+            <path class="st0" d="M229.5,307.4c0,0-3,1-9-3c-6-4-12-4-12-4l0,0c0,0-5,0-11,4s-9,3-9,3"/>
+            <line class="st0" x1="268.5" y1="237" x2="268.5" y2="192.6"/>
+            <line class="st0" x1="268.5" y1="302" x2="268.5" y2="244.6"/>
+            <path class="st0" d="M299.5,187.5c0,0-6-1-12,3c-6,4-12,4-12,4l0,0c0,0-5,0-11-4s-12-3-12-3"/>
+            <line class="st0" x1="283.5" y1="231" x2="283.5" y2="192.6"/>
+            <line class="st0" x1="283.5" y1="302" x2="283.5" y2="238"/>
+            <path class="st0" d="M296.5,307.4c0,0-3,1-9-3c-6-4-12-4-12-4l0,0c0,0-5,0-11,4s-9,3-9,3"/>
+            <path class="st0" d="M243.5,225.5c0,0-2,9-18,11s-34,7-37,27c0,0,22-32,52-7c0,0,1-6,18-9s36-13,38-27
+                C296.5,220.5,262.5,255.5,243.5,225.5z"/>
+            <path class="st0" d="M344.5,194.5c9-7,14-12,25-7c0,0,16,8,1.1,32.4"/>
+            <path class="st0" d="M304.5,203.5c0,0,4,7,14-4c12.4-13.6,31-35,59-27s11,44,11,44s-8.8,15.9-21.4,20.9"/>
+            <path class="st0" d="M165.5,98.5c0,0,2-5,13-6s16-7,14-13s-13-22-32-15s-19,15-19,15"/>
+            <path class="st0" d="M139.5,120.5c0,0,0,8,4,12c0,0,3-8,8-8c0,0-3,18,14,29c0,0-2-11,2-16c0,0,8,8,17,11s21,11,13,22"/>
+            <path class="st0" d="M175.8,92.9c0,0-5.3,18.6,8.7,30.6s25,9,25,39"/>
+            <path class="st0" d="M200.1,164.5c0,0,6.4-5,13.4,0c0,0,7-5,12,3s3.3,9.8,3.3,9.8"/>
+            <path class="st0" d="M190.7,87.5c0,0,10.8,11,23.8,11v23h-24l-2,5.1"/>
+            <circle class="st0" cx="193.5" cy="100.5" r="2"/>
+            <path class="st0" d="M152.9,137.6c0,0-7.4,5.9-9.4,17.9s-7,23-14,14s-4-24,2-37s20-20,15-42s-27-26-34-25s-17,5-20,15c0,0-4,14,7,15
+                s3-14,18-15s21,15,16,24s-21,28-22,45s9,28,9,28s-8,7-7,17s3,15-1,18s-5-2-7,8s-1.3,21,3.3,22h22.7c0,0,5-6-1-10s-14,2-11-7
+                s8-4,19-6s17-6,18-15s-7-9-8-19"/>
+            <path class="st0" d="M139.5,219.5c0,0-2,6,2,8s13.3,7,13.2,14.5h19.8c0,0,4-4.5-5-9.5s-13-5-13-13c0,0,18-4,21-14s-10-18-10-18l2-2"
+                />
+            <path class="st0" d="M56.5,385.5c0,0,10,2,29-3s25-11,25-11s27,27,45,34"/>
+            <path class="st0" d="M102.5,281.5c-11.7,9.4-12.3,20.9-14,31c-2,12-1,45-1,45s-9,13-23,13s-14,0-15-5s-11-3-11-3"/>
+            <path class="st0" d="M131.5,310.5c0,0,23,4,31-7s-4-9-12-18s-20-20-38-11"/>
+            <path class="st0" d="M158.5,395.5c0,0-7,14-1,34"/>
+            <path class="st0" d="M155.1,442.4c0,0,4.4-3.9,10.4-2.9s8,0,9-4s1-12,12-14s10,1,15-6c0,0,4,16,15,25s24,10,27,4s0-16-6-15
+                s-14,2-20-8s-7-13-7-26s2-27-19-45c0,0-12-9-40-12"/>
+            <path class="st0" d="M161.5,425.5c0,0-3,7-10,4s-10-8-15-6s-5,2-5,2"/>
+            <path class="st0" d="M115.5,303.5c0,0,36.1,14.3,52,37.7"/>
+            <circle class="st0" cx="132.5" cy="287.5" r="2"/>
+            <path class="st0" d="M125.5,280.5c0,0-14-11-26-6c0,0,2,11,15,14"/>
+            <path class="st0" d="M87.6,322.3c0,0-6.1,0.2-10.1,8.2c0,0-12-6-13-14s3-16-5-17s-10,8-8,17s22,27,22,27l14.1-2.3"/>
+            <path class="st0" d="M193.5,458.5l14-15c0,0-14-10.8-13.5-22.9"/>
+            <path class="st0" d="M177.2,427c0,0,0.3,3.5,8.3,9.5s3,8-3,9s-10.4,0.9-8.7,6"/>
+            <path class="st0" d="M411.3,381.7l0.2,7.8c0,0-16-16-16-24"/>
+            <path class="st0" d="M401.2,377.5l-2.7,5c0,0-9-23-21-20"/>
+            <path class="st0" d="M270.6,318.9c0,0-6.1,44.6-2.1,65.6s28,83,28,83l2-43"/>
+            <path class="st0" d="M290.5,416.5l12,13c0,0,4-12-2-27"/>
+            <path class="st0" d="M302.5,408.7c0,0,10-2.2,6-24.2"/>
+            <line class="st0" x1="309.2" y1="389.5" x2="322.5" y2="389.5"/>
+            <path class="st0" d="M409.5,374.5c2,20,33,48,33,48c-12-35-10-122-10-122s-5-13-18-27s-18-12.9-28-10c-7,2-7,7-7,7v27h-14
+                c13,6,14,20,15,41s-4,36-12,49s-14,20-19,35s-19,14-19,14l-12,2c11-10,10-34,7-42s-15-37-13-58s13-28,13-28s10-2,13,18l10-22l10,14
+                c0,0,0-17,4-16s16,11,16,11"/>
+            <path class="st0" d="M325.5,310.5c0,0,5-15-17-28"/>
+            <path class="st0" d="M321.5,264.5c-8-2-14.1-2.4-20,1c-6.6,3.8-13,14-6,26c8-16,29-7,29-7C329.5,278.5,321.5,264.5,321.5,264.5
+                c9-4,19-1,19-1c20,4,25,34,25,34"/>
+            <circle class="st0" cx="333.5" cy="269.5" r="2"/>
+            <path class="st0" d="M364.8,393.4v19.1c0,0,11.7-22,19.7,0c0,0-14-5-20,13c0,0-7-6-12-2c0,0,8-4.2,6.5-21.1"/>
+            <path class="st0" d="M329,436.8c0,0,4.5,1.8,2.5,7.8c0,0-12,0-13,8c0,0-5-10-12,0c0,0-5-7,6-25c8.6-14,13.7-18.9,14-28"/>
+            <path class="st0" d="M320.5,216.1c0,0-5,8.4-16,7.9"/>
+            <line class="st0" x1="359" y1="242.5" x2="304.5" y2="242.5"/>
+            <path class="st0" d="M359.8,238.9c0,0-34.3,2.6-39.3-20.4c-3.2-14.7,13-25.3,25-24c18,2,23,16,23,16c9,28-11,35-11,35
+                c11-27-4-35-4-35c-8-4.2-18.9-0.9-16,8c0,0,6,13,24,6"/>
+            <path class="st0" d="M383.7,223.6c0,0-0.2,9.9,6.8,18.9H363"/>
+            <line class="st0" x1="236.5" y1="429.5" x2="236.5" y2="316.6"/>
+        </svg>
+    </div>
+    <div class="bg_up"></div>
+    <div class="bg_black"></div>
+    <div class="bg_down"></div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!--header-->
+    <header class="col-d-12" id="header">
+        <img src="../img/logo_w.png" alt="logo">
+        <div class="header_menu">
+            <div id="menu1" style="width: 13px; top: 0%; left: 0%;"></div>
+            <div id="menu2" style="width: 25px; top: 50%; left: 0%; transform: translateY(-50%);"></div>
+            <div id="menu3" style="width: 13px; bottom: 0%; right: 0%;"></div>
+        </div>
+        <img src="../img/icon_magic_w.png" alt="spell icon" id="spell"/>
+    </header>
+    
+    <!--nav-->
+    <nav class="col-d-4 nav_wrapper">
+        <!--main menu-->
+        <ul class="nav_main">
+            <li id="login">로그인 ∙ 회원가입</li>
+            <hr/>
+
+            <li>학교소개</li>
+            <!--학교소개-->
+            <ul class="nav_sub school">
+                <li>교가</li>
+                <li>언론보도</li>
+                <li>행정센터</li>
+            </ul>
+
+            <li>수강신청</li>
+            <!--수강신청-->
+            <ul class="nav_sub study">
+                <li>학사일정</li>
+                <li>신청하기</li>
+                <li>내 시간표</li>
+            </ul>
+
+            <li>도서관</li>
+            <!--도서관-->
+            <ul class="nav_sub library">
+                <li>신작</li>
+                <li>인기작</li>
+                <li>서평</li>
+            </ul>
+
+            <li class="nav_map">오시는 길</li>
+        </ul>
+        <img src="../img/plus.png" alt="menu close button" id="nav_close"/>
+        <img src="../img/logo_emblem_b.svg" alt="logo(emblem)" id="nav_logo"/>
+    </nav>
+
+    <!--spell-->
+    <div class="nav_spell col-d-4">
+        <div class="nav_input">
+            <input type="text" name="spell" placeholder="알맞은 주문을 한글로 입력해주세요"/>
+            <i class="las la-angle-right"></i>
+            <!--<i class="las la-times"></i>-->
+        </div>
+        <span>#루모스</span>
+        <span>#녹스</span>
+        <span>#인센디오</span>
+        <span>#익스펙토 패트로눔</span>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!--alert-->
+    <div class="alert_container col-d-4">
+        <span>회원가입 불가</span>
+        <i class="las la-home"></i>
+        <hr/>
+        <img src="../img/plus.png" alt="alert close button" id="alert_close"/>
+        <div class="alert_content">
+            <img src="../img/alert_x.png" alt="join refuse image"/>
+            <p>빈 항목이 없도록 내용을 입력해주세요</p>
+        </div>
+    </div>
+    <div class="alert_bg"></div>
+
+
+    <!--page1-->
+    <div class="page1 clearfix col-d-12">
+        <section class="sec2 col-d-3">
+            <span>HOGWARTS<br/>HOUSES</span>
+            <img src="../img/plus.png" alt="more button"/>
+        </section>
+
+        <section class="sec1 clearfix">
+            <div class="col-d-6 title">
+                <span id="title1">SLYTHERIN WON</span>
+                <span id="title2">THE QUIDDITCH GAMES</span>
+            </div>
+        </section>
+    </div>
+        
+        
+    <!--page2-->
+    <div class="page2 clearfix col-d-12">
+        <div class="clearfix contents_left col-d-6">
+            <section class="sec2-2 col-d-6">
+                <p>호그와트의 기숙사를 소개합니다<br/>위대한 마법사들의 정신을 느껴보세요</p>
+            </section>
+            
+            <section class="sec4 col-d-6">
+                <span>축사</span>
+                <span>슬리데린의 최종 기숙사 우승을 축하합니다! 햇수로는 4년 만이군요. 모두가 합심하여 꾸준히 힘써준 덕분이라고 생각합니다. 앞으로도 …</span>
+            </section>
+
+            <section class="sec3 col-d-6">
+                <ul class="li_container">
+                    <li class="sly_circle dorm_active" data-li_num="1">SLYTHERIN</li>
+                    <li class="gry_circle" data-li_num="2">GRYFFINDOR</li>
+                    <li class="rav_circle" data-li_num="3">RAVENCLAW</li>
+                    <li class="huf_circle" data-li_num="4">HUFFLEPUFF</li>
+                </ul>
+
+                <div class="arr_container">
+                    <img class="arr_btns" src="../img/icon_arr_l.svg" alt="prev button" id="prev_arr" data-arr_num="1"/>
+                    <img class="arr_btns" src="../img/icon_arr_r.svg" alt="next button" id="next_arr" data-arr_num="1"/>
+                </div>
+            </section>
+            
+            <section class="sec5 col-d-6">
+                <span>기숙사 점수가 의문이라면?</span>
+                <span>문의하기</span>
+                <div class="sec5_bg"></div>
+            </section>
+        </div>
+        
+        <section class="sec6 contents_right col-d-6">
+            <a>점수 공유하기<img src="../img/btn_arr_g.svg" alt="score result share"/></a>
+            <span>기숙사 점수</span>
+            
+            <div class="dorm_circle middle" id="dorm_1">
+                <article class="dorm_txt">
+                    <p>1st</p>
+                    <p>171,500P</p>
+                </article>
+            </div>
+            <div class="dorm_circle" id="dorm_2">
+                <article class="dorm_txt">
+                    <p>2st</p>
+                    <p>150,300P</p>
+                </article>
+            </div>
+            <div class="dorm_circle" id="dorm_3">
+                <article class="dorm_txt">
+                    <p>3st</p>
+                    <p>128,200P</p>
+                </article>
+            </div>
+            <div class="dorm_circle" id="dorm_4">
+                <article class="dorm_txt">
+                    <p>4st</p>
+                    <p>105,080P</p>
+                </article>
+            </div>
+        </section>
+    </div>
+    
+    
+    <!--page3-->
+    <div class="page3 clearfix col-d-12">
+        <div class="pg3_1 col-d-2 gray"></div><!--img-->
+        <section style="height: 100%;">
+            <div class="pg3_right col-d-7">
+                <span style="margin: 0;">HOGWARTS<br/>SPECIAL</span>
+            </div>
+            <section class="pg3_2 col-d-12 clearfix">
+                <p class="col-d-2">호그와트 학생 기자단의 취재 수첩, ‘호그와트 스페셜’의 아흔 다섯번째 이야기를 소개합니다.<br/><br/>
+                    호그와트 벽면의 움직이는 초상화, 그들의 이야기가 궁금하다면? 사진을 클릭해 구입처로 이동하세요!
+                </p>
+                <img src="../img/gif/sly2.gif" class="col-d-7 gray"/><!--img-->
+            </section>
+            <div class="pg3_bg col-d-2"></div><!--bg-->
+        </section>
+    </div>
+    
+    
+    <!--footer-->
+    <footer class="col-d-12 clearfix">
+        <img src="../img/logo_emblem_w.svg" alt="logo(emblem)" id="footer_img1"/>
+        <img src="../img/logo_w.png" alt="logo" id="footer_img2">
+        <div class="ft_container col-d-7">
+            <ul>
+                <li>유의사항</li>
+                <li>머글을 위한 사항</li>
+                <li>학생을 위한 사항</li>
+            </ul>
+            <ul>
+                <li>관련 사이트</li>
+                <li>트리위저드 시합</li>
+                <li>예언자일보</li>
+            </ul>
+            <ul>
+                <li>커뮤니티</li>
+                <li>부엉이 메신저</li>
+                <li>호울러</li>
+            </ul>
+        </div>
+        <div class="ft_container2 col-d-2">
+            <img src="../img/icon_owl_active.png" alt="owl messanger" onclick="location.href='./messenger.html'"/>
+            <p>© 2019 Hogwarts School All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script src="../js/common.js"></script>
+<script>
+    $(document).ready(function(){
+        var scrolltop = window.scrollY;
+        var windowheight = $(window).height();
+        var spanheight = $(".span5 span").height();
+        var circlesize = $(".dorm_circle").width();
+
+        $(".sec4").css("height",windowheight/2);
+        $(".sec5").css("height",windowheight/2);
+        $(".dorm_circle").css("height",circlesize);
+
+        $(window).resize(function(){
+            windowheight = $(window).height();
+            $(".sec4").css("height",windowheight/2);
+            $(".sec5").css("height",windowheight/2);
+            /*$(".sec6").css("height",windowheight);*/
+            $(".dorm_circle").css("height",circlesize);
+        });
+
+
+
+        /*moving background img*/
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".sec1").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $(".sec1").css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+
+
+
+        $(window).scroll(function(){
+            scrolltop = window.scrollY;
+            var pg3_textTop = $(".page3").offset().top;
+            //console.log(scrolltop + " / " + pg3_textTop);
+
+            if(scrolltop >= windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_b.png");
+                $("#header img:nth-child(1)").css("display","none");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_b.png");
+                $(".header_menu div").css("background-color","#333");
+                textup(windowheight);
+
+            }else if(scrolltop < windowheight){
+                //$("#header img:nth-child(1)").attr("src","../img/logo_w.png");
+                $("#header img:nth-child(1)").css("display","block");
+                $(".header_menu div").css("background-color","#fff");
+                $("#header img:nth-child(3)").attr("src","../img/icon_magic_w.png");
+
+            }else if(scrolltop > 0){
+                $(".sec5_bg").css("background-size","100%");
+            }
+
+            if(scrolltop >= pg3_textTop){
+                $(".page3 p").css("animation","up 0.7s forwards");
+            }
+        });
+
+
+
+        /*sec2 height calc*/
+        var span_height = $(".sec2 span").height();
+        var calc_height = span_height + parseInt(100);
+        var result_height = calc_height + "px";
+
+
+
+        /*loading*/
+        setTimeout(function(){
+            $(".bg_up").animate({height:"100%", top:"0%"},400, "easeInCubic", function(){
+                $(".bg_up").animate({top:"-100%"},400, "easeInCubic");
+                $(".bg_black").css("height","0%");
+                $(".wrapper").css("display","none");
+                $(".sec2").css({top: "calc(100% - " + result_height +")", height: result_height});
+                $(".pg3_right").css("height", result_height);
+                $(".pg3_2").css("height", "calc( ( 100% - 100px ) - " + result_height + ")");
+                $(".sec2 img").css("display","block");
+                $(".sec1").animate({top:"0%"},450, function(){
+                    $("#header").animate({top:"0px"},600);
+                    $("#header").css("z-index","11");
+                });
+            });
+        },1600);
+
+
+
+        /*scroll(for click)*/
+        $(".sec2 img").click(function(){
+            windowheight = $(window).height();
+            var scroll_position = $(".sec1").outerHeight();
+            $("html").stop().animate({scrollTop : scroll_position}, 600);
+            $(".sec5_bg").css("background-size","100%");
+            textup(windowheight);
+        });
+
+        function textup(w){
+            setTimeout(function(){
+                $(".sec4 span:nth-child(1)").css("animation","up 0.7s forwards");
+                $(".sec6 span").css("animation","up 0.7s forwards");
+
+                $(".sec4 span:nth-child(2)").css("animation","up 0.7s 0.5s forwards");
+                $(".sec5 span:nth-child(1)").css("animation","up 0.7s 0.5s forwards");
+                $(".sec5 span:nth-child(2)").css("animation","up 0.7s 0.5s forwards");
+
+                $(".sec3 li:nth-child(1)").css("animation","up 0.7s 0.5s forwards");
+                $(".sec3 li:nth-child(2)").css("animation","up 0.7s 0.7s forwards");
+                $(".sec3 li:nth-child(3)").css("animation","up 0.7s 0.9s forwards");
+                $(".sec3 li:nth-child(4)").css("animation","up 0.7s 1.1s forwards");
+
+                $(".dorm_circle p").css("animation","up 0.7s 1.5s forwards");
+            }, 800);
+        }
+    });
+
+
+
+    /*sec6 hover*/
+    $(".sec6 a").hover(function(){
+        $(".sec6 a").css("color","#333");
+        $(".sec6 img").attr("src","../img/btn_arr_b.svg");
+    }, function(){
+        $(".sec6 a").css("color","#777");
+        $(".sec6 img").attr("src","../img/btn_arr_g.svg");
+    });
+
+
+
+    /*dorm click*/
+    $(".li_container li").click(function(){
+        var liClass = $(this).attr("class");
+        var li_num = $(this).attr("data-li_num");
+        var whichLi = $(".dorm_active").attr("data-li_num");
+        //console.log(whichLi);
+        dorm_click(li_num, liClass, whichLi);
+    });
+
+
+
+    /*sec3 arr click*/
+    $(".arr_container img").click(function(){
+        var whichArr = $(this).attr("id");
+        var hasClass = $(".dorm_active").attr("class");
+        var arrClass = hasClass.substr(0,10);
+        var data_num = "";
+        //console.log("arrClass : "+arrClass);
+
+        if(whichArr == "prev_arr"){
+            data_num = $(this).attr("data-arr_num"); // 돔트리에 적용되어있는 arr_num라는 데이터타입의 값
+            arr_click(data_num, arrClass, whichArr); // this에 숫자가 필요함
+        }else if(whichArr == "next_arr"){
+            data_num = $(this).attr("data-arr_num");
+            arr_click(data_num, arrClass, whichArr);
+        }
+    });
+
+    function arr_click(d,c,w){
+        var resultNum = 0;
+        var minusNum = 0;
+
+        switch(c){
+            case "sly_circle":
+                classDivide("sly_circle", w, d);
+                break;
+
+            case "gry_circle":
+                classDivide("gry_circle", w, d);
+                break;
+
+            case "rav_circle":
+                classDivide("rav_circle", w, d);
+                break;
+
+            case "huf_circle":
+                classDivide("huf_circle", w, d);
+                break;
+        }
+    }
+
+    function classDivide(className, w, d){
+        if($("." + className).hasClass("dorm_active")){
+            if(w == "prev_arr"){
+                if(className == "sly_circle"){
+                    numBack(4,3,1, true, className); // bool = prev_arr면 true, next_arr면 false
+                }else if(className == "gry_circle"){
+                    $("#prev_arr").css("visibility","hidden");
+                    numBack(Number(d)-1, Number(d)-2, Number(d), true, className);
+                }else if(className == "rav_circle"){
+                    numBack(Number(d)-1, Number(d)-2, Number(d),true, className);
+                }else if(className == "huf_circle"){
+                    $("#next_arr").css("visibility","visible");
+                    numBack(Number(d)-1, Number(d)-2, Number(d), true, className);
+                }
+            }else{
+                if(className == "sly_circle"){
+                    $("#prev_arr").css("visibility","visible");
+                    numBack(Number(d)+1, Number(d), Number(d)+2, false, className);
+                }else if(className == "gry_circle"){
+                    numBack(Number(d)+1, Number(d), Number(d)+2, false, className);
+                }else if(className == "rav_circle"){
+                    $("#next_arr").css("visibility","hidden");
+                    numBack(Number(d)+1, Number(d), Number(d)+2, false, className);
+                }else if(className == "huf_circle"){
+                    numBack(1,4,0, false, className);
+                }
+            }
+        }
+    }
+
+    function numBack(resultNum, minusNum, plusNum, bool, className){
+        var resultNum = resultNum;
+        var minusNum = minusNum;
+        var plusNum = plusNum;
+
+        if(bool){
+            if(className == "sly_circle"){
+                $(".dorm_circle").not("#dorm_" + plusNum).css("left","150%");
+                $("#dorm_" + plusNum).animate({left: "-50%"},600);
+            }else{
+                $("#dorm_" + plusNum).animate({left: "150%"},600);
+            }
+        }else{
+            $("#dorm_" + minusNum).animate({left: "-50%"},600);
+            if(className == "sly_circle") $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+            else if(className == "huf_circle")  $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+        }
+
+        arrFunction(resultNum, minusNum);
+    }
+
+    function arrFunction(resultNum, minusNum){
+        $("#dorm_" + resultNum).animate({left: "50%"},600);
+        if($("#dorm_" + minusNum).hasClass("middle")){
+            $("#dorm_" + minusNum).removeClass("middle");
+            $("#dorm_" + resultNum).addClass("middle");
+        };
+
+        $("#next_arr, #prev_arr").attr("data-arr_num", resultNum); // next_arr 에 데이터타입 값을 변경된 값으로 변경
+        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+    }
+
+
+
+    /*.sec3 li click*/
+    function dorm_click(n,c,w){
+        var resultNum = Number(n);
+        var minusNum = resultNum-1;
+        var plusNum = resultNum+1;
+        //console.log(resultNum + " / " + minusNum + " / " + plusNum);
+        var whichLi = Number(w); // 이전, 다음 방향 확인
+
+        if(whichLi > resultNum){ // 이전(prev) 방향
+            switch(c){
+                case "sly_circle":
+                    if($(".sly_circle").hasClass("dorm_active")){
+                        console.log("sly");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + resultNum).css("left","-50%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + plusNum).animate({left : "150%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "gry_circle":
+                    if($(".gry_circle").hasClass("dorm_active")){
+                        console.log("grf");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + resultNum).css("left","-50%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + plusNum).animate({left : "150%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "rav_circle":
+                    if($(".rav_circle").hasClass("dorm_active")){
+                        console.log("rav");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + resultNum).css("left","-50%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + plusNum).animate({left : "150%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "huf_circle":
+                    if($(".huf_circle").hasClass("dorm_active")){
+                        console.log("huf");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + resultNum).css("left","-50%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + plusNum).animate({left : "150%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+            }
+
+
+        }else{ // 다음(next) 방향
+            switch(c){
+                case "sly_circle":
+                    if($(".sly_circle").hasClass("dorm_active")){
+                        console.log("sly");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + minusNum).animate({left : "-50%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "gry_circle":
+                    if($(".gry_circle").hasClass("dorm_active")){
+                        console.log("grf");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + minusNum).animate({left : "-50%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "rav_circle":
+                    if($(".rav_circle").hasClass("dorm_active")){
+                        console.log("rav");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + minusNum).animate({left : "-50%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+
+                case "huf_circle":
+                    if($(".huf_circle").hasClass("dorm_active")){
+                        console.log("huf");
+                    }else{
+                        $(".dorm_circle").not("#dorm_" + minusNum).css("left","150%");
+                        $(".sec3 li:nth-child(" + resultNum + ")").addClass("dorm_active");
+                        $(".sec3 li").not(".sec3 li:nth-child(" + resultNum + ")").removeClass("dorm_active");
+                        $("#dorm_" + minusNum).animate({left : "-50%"},600);
+                        $("#dorm_" + resultNum).animate({left : "50%"},600);
+                    }
+
+                    $("#next_arr, #prev_arr").attr("data-arr_num", resultNum);
+                    break;
+            }
+        }
+    }
+
+
+    /*dorm hover*/
+    $(".dorm_circle").hover(function(){
+        //console.log(this);
+        $(this).css("background-size","100%");
+    });
+
+
+
+    /*go to question*/
+    $(".sec5 span:nth-child(2)").click(function(){
+        location.href="./school.html?submenu=" + "행정센터";
+    });
+</script>
+</html>
